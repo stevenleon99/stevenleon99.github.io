@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hello there, I'm Yinan or you can call me Steve"
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
