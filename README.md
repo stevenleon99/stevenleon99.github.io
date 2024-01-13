@@ -20,9 +20,14 @@ See more info at https://academicpages.github.io/
 
 1. Clone the repository and made updates as detailed above
 1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
+1. Run `bundle clean` to clean up the directory (may need to run `--force`)
 1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
 1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+1. Change `_config.yml` according to `_config.dev.yml` (I used #dev_mod to specified)
+1. Go to personal github page, follow the [Instruction](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to grant a access-token (Do not forget to put it in .gitignore). Check by `echo $JEKYLL_GITHUB_TOKEN
+`
+1. Run `sudo gem install webrick`
+1. Add `gem 'webrick', '~> 1.7'` to `Gemfile`
 
 # Changelog -- bugfixes and enhancements
 

@@ -8,8 +8,30 @@ redirect_from:
   - /about.html
 ---
 
-Experienced System Verification and Mechanical Engineer with a strong interest and expertise in surgical robotics. Used to employed at Medtronic, where I have been working since 2018. My work revolves around robot subsystem design and system accuracy optimization, specifically in the areas of ortho. and neuro. robotics. Eager to make disruptive innovations in the surgical robotics industry, I am pursuing a master's degree to enhance my knowledge of robotics and control systems.
+<style>
+    .maintext1 {
+      font-family: 'Times New Roman';
+    }
+    .termword {
+      font-family: 'Times New Roman';
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .reference {
+      font-size: 0.8em;
+    }
+</style>
 
-During my tenure at Medtronic, I have gained invaluable experience and developed strong technical skills. Notably, I have been deeply involved in the Spine Robotics and Optical Navigation System project, where I have mastered spine robotics, trauma robotics, optical navigation system design, and remote support and consultation platform development. I have also filed Spine-Robotic Related Patents.
+<p class="maintext1">
+I am an experienced <text class="termword">System Verification, Electromechanical Design,  Software Development Engineer</text> with a strong interest and expertise in <text class="termword">Surgical Robotics and Visualization Technologies</text>. Used to employed at <a href="https://www.medtronic.com/us-en/healthcare-professionals/products/spinal-orthopaedic.html">Medtronic (2018 - 2023)</a>. My work revolves around <text class="termword">Robotic Subsystem Design, Software Test, Integration Test, Systematic Verification and Systematic Accuracy Optimization</text>, specifically in the fields of Orthopedic and Neurological robotics. Eager to make disruptive innovations in the surgical robotics industry, I am fortunate to be accepted and pursuing an advanced degree of robotics @ <a href="https://lcsr.jhu.edu/about/">LCSR JHU</a> </p> 
 
-Driven by my passion for robotics research, I aspire to contribute to the development of surgical robotic innovations, particularly in the areas of robot sensing and perception, robot vision, navigation and positioning systems, and autonomous systems. My ultimate goal is to solve the shortage and uneven distribution of medical resources by inventing disruptive innovations and becoming a Subject Matter Expert in the industry.
+
+[Selected Experience](https://stevenleon99.github.io//portfolio/)
+------
+
+
+
+[News](https://stevenleon99.github.io//year-archive/)
+------
+
+<p class="maintext1">Fortunate to be chosen for Pittsburgh Roboitcs Trek held by <a href="https://imagine.jhu.edu/">Integrative Learning and Life Desgin</a> of JHU <text class="reference">(<a href="https://www.linkedin.com/feed/update/urn:li:activity:7151653086367817728/">[>Gecko]</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7150616178858627072/">[>Carnegie Robotics]</a>[>Astrobotic][>Agility][>NREC][>Smith&Nephew])</text><p>

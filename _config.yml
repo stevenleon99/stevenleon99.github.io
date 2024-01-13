@@ -11,9 +11,10 @@ title                    : "Yinan(Steve) Liu"
 title_separator          : "-"
 name                     : &name "Yinan(Steve) Liu"
 description              : &description "personal description"
-url                      : https://stevenleon99.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://stevenleon99.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+# url                      : http://localhost:4000 # dev_mod
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "https://github.com/stevenleon99?tab=repositories"
+# repository               : "https://github.com/stevenleon99?tab=repositories"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -24,6 +25,7 @@ comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
     shortname            :
+    # shortname            : "mmistakes-dev" # dev_mod
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -74,6 +76,7 @@ social:
 # Analytics
 analytics:
   provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  # provider: false # dev_mod
   google:
     tracking_id          :
 
@@ -82,27 +85,27 @@ analytics:
 author:
   name             : "Yinan(Steve) Liu"
   avatar           : "avatar_2.png"
-  bio              : "Candidate for Robotics Master"
+  bio              : "Candidate for Robotics MSE | LCSR | Former Medtronic Engineer | Autonomous Tech Enthusiast"
   location         : "Baltimore MD USA"
   employer         : "Johns Hopkins University"
   pubmed           : 
   googlescholar    : 
-  email            :
+  email            : "Steven_liu1015@outlook.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
+  uri              : "https://stevenleon99.github.io//"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "profile.php?id=100009954732644"
   foursquare       :
   github           : "stevenleon99"
   google_plus      :
   keybase          :
-  instagram        :
+  instagram        : "lyn_1098"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "steveliu001"
   orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
@@ -115,7 +118,6 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-
 
 # Reading Files
 include:
@@ -249,6 +251,7 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  # style: expanded # dev_mod
 
 
 # Outputting
