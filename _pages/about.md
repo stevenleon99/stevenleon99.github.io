@@ -31,6 +31,13 @@ I am an experienced <text class="termword">System Verification, Electromechanica
 <div class="maintext1">
   <p>
     <p>
+      📑 DDS Middleware for <a href="https://dvrk.readthedocs.io/devel/">dVRK</a>
+      <a href="https://stevenleon99.github.io//portfolio/">
+        <img src='/images/DDSdVRK.jpg'>
+      </a>
+    </p>
+    <p>
+    <p>
       📑 Spine Surgical Robot (Mazor XC)
       <a href="https://stevenleon99.github.io//portfolio/">
         <img src='/images/Mazor.png'>
@@ -53,6 +60,8 @@ I am an experienced <text class="termword">System Verification, Electromechanica
 
 [>News](https://stevenleon99.github.io//year-archive/)
 ------
-<p class="maintext1">🗓2024/06 Fortunate to be admitted to a software engineer role in <a href="https://www.medtronic.com/covidien/en-us/robotic-assisted-surgery/hugo-ras-system.html">Hugo RAS</a> team of Medtronic <text class="reference">([>Medtronic][>Hugo RAS][>NorthHaven][>CoOp])</text><p>
+<p class="maintext1">f📆2025/06 Glad to Graduate from JHU in <a href="https://lcsr.jhu.edu/">MSE of Robotics</a> <text class="reference">([>Medtronic][>Hugo RAS][>NorthHaven][>CoOp])</text><p>
 
-<p class="maintext1">🗓2024/01 Fortunate to be chosen for Pittsburgh Roboitcs Trek held by <a href="https://imagine.jhu.edu/">Integrative Learning and Life Desgin</a> of JHU <text class="reference">(<a href="https://www.linkedin.com/feed/update/urn:li:activity:7151653086367817728/">[>Gecko]</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7150616178858627072/">[>Carnegie Robotics]</a>[>Astrobotic][>Agility][>NREC][>Smith&Nephew])</text><p>
+<p class="maintext1">📆2024/06 Fortunate to be admitted to a software engineer role in <a href="https://www.medtronic.com/covidien/en-us/robotic-assisted-surgery/hugo-ras-system.html">Hugo RAS</a class="reference"> team of Medtronic <text class="reference">([>Medtronic][>Hugo RAS][>NorthHaven][>CoOp])</text><p>
+
+<p class="maintext1">📆2024/01 Fortunate to be chosen for Pittsburgh Roboitcs Trek held by <a href="https://imagine.jhu.edu/">Integrative Learning and Life Desgin</a> of JHU <text class="reference">(<a href="https://www.linkedin.com/feed/update/urn:li:activity:7151653086367817728/">[>Gecko]</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7150616178858627072/">[>Carnegie Robotics]</a>[>Astrobotic][>Agility][>NREC][>Smith&Nephew])</text><p>
