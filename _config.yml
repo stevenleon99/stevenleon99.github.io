@@ -85,9 +85,9 @@ analytics:
 author:
   name             : "Yinan(Steve) Liu"
   avatar           : "avatar_2.png"
-  bio              : "Candidate for Robotics MSE | LCSR | Former Medtronic Engineer | Autonomous Tech Enthusiast"
-  location         : "Baltimore MD USA"
-  employer         : "Johns Hopkins University"
+  bio              : "Robotics MSE | LCSR | JHU | Former Medtronic Engineer | Autonomous Tech Enthusiast"
+  location         : "Medford MA USA"
+  employer         : "Globus Medical"
   pubmed           : 
   googlescholar    : 
   email            : "Steven_liu1015@outlook.com"
@@ -102,7 +102,7 @@ author:
   github           : "stevenleon99"
   google_plus      :
   keybase          :
-  instagram        : "lyn_1098"
+  instagram        : # "lyn_1098"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "steveliu001"
