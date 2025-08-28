@@ -59,6 +59,8 @@ I am an experienced <text class="termword">System Verification, Electromechanica
 
 [>News](https://stevenleon99.github.io//year-archive/)
 ------
+<p class="maintext1">📆2025/07 Join in Globus Medical as <a href="https://www.globusmedical.com/musculoskeletal-solutions/excelsiustechnology/">Software Test Automation Engineer</a> <text class="reference">([#GM][#GlobusMedical][#Excelsius])</text></p>
+
 <p class="maintext1">📆2025/06 Glad to graduate from JHU in <a href="https://lcsr.jhu.edu/">MSE of Robotics</a> <text class="reference">([#JHU][#LCSR])</text></p>
 
 <p class="maintext1">📆2024/06 Fortunate to be admitted to a software engineer role in <a href="https://www.medtronic.com/covidien/en-us/robotic-assisted-surgery/hugo-ras-system.html">Hugo RAS</a> team of Medtronic <text class="reference">([#Medtronic][#Hugo RAS][#NorthHaven][#CoOp])</text></p>
