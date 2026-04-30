@@ -1,0 +1,249 @@
+/* ==========================================================================
+   MODERN CUSTOM STYLES
+   Tag badges, cards, project grid, timeline
+   ========================================================================== */
+
+/* --- Tag / Tech Badge System --- */
+.tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.75em;
+  font-weight: 600;
+  font-family: $global-font-family;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.4;
+  text-decoration: none;
+  vertical-align: baseline;
+  transition: $global-transition;
+}
+
+.tag--blue {
+  background: rgba($primary-color, 0.1);
+  color: $primary-color;
+  border: 1px solid rgba($primary-color, 0.2);
+  &:hover { background: rgba($primary-color, 0.18); }
+}
+
+.tag--cyan {
+  background: rgba($accent-color, 0.1);
+  color: darken($accent-color, 15%);
+  border: 1px solid rgba($accent-color, 0.2);
+  &:hover { background: rgba($accent-color, 0.18); }
+}
+
+.tag--purple {
+  background: rgba($accent-secondary, 0.1);
+  color: darken($accent-secondary, 10%);
+  border: 1px solid rgba($accent-secondary, 0.2);
+  &:hover { background: rgba($accent-secondary, 0.18); }
+}
+
+.tag--green {
+  background: rgba($success-color, 0.1);
+  color: darken($success-color, 15%);
+  border: 1px solid rgba($success-color, 0.2);
+  &:hover { background: rgba($success-color, 0.18); }
+}
+
+.tag--amber {
+  background: rgba($warning-color, 0.12);
+  color: darken($warning-color, 20%);
+  border: 1px solid rgba($warning-color, 0.25);
+  &:hover { background: rgba($warning-color, 0.2); }
+}
+
+.tag--red {
+  background: rgba($danger-color, 0.1);
+  color: darken($danger-color, 10%);
+  border: 1px solid rgba($danger-color, 0.2);
+  &:hover { background: rgba($danger-color, 0.18); }
+}
+
+.tag--gray {
+  background: rgba($gray, 0.1);
+  color: $dark-gray;
+  border: 1px solid rgba($gray, 0.2);
+  &:hover { background: rgba($gray, 0.18); }
+}
+
+/* Tag group container */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+/* --- Project Card --- */
+.project-card {
+  display: block;
+  background: $body-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: $global-transition;
+  margin-bottom: 1.5em;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    transform: translateY(-2px);
+    border-color: rgba($primary-color, 0.3);
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.project-card__body {
+  padding: 1em 1.25em 1.25em;
+
+  h3 {
+    margin: 0 0 0.4em;
+    font-size: $type-size-4;
+    color: $darker-gray;
+  }
+
+  p {
+    margin: 0;
+    font-size: $type-size-6;
+    color: $gray;
+    line-height: 1.5;
+  }
+}
+
+/* Project grid layout */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25em;
+  margin: 1.5em 0 2em;
+}
+
+/* --- Timeline / News --- */
+.timeline {
+  position: relative;
+  padding-left: 1.75em;
+  margin: 1em 0 2em;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.4em;
+  top: 0.4em;
+  bottom: 0.4em;
+  width: 2px;
+  background: linear-gradient(to bottom, $primary-color, $accent-color);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5em;
+  padding-left: 0.5em;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1.55em;
+    top: 0.5em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: $type-size-6;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 0.25em;
+  font-family: $global-font-family;
+}
+
+.timeline-content {
+  font-size: $type-size-5;
+  line-height: 1.6;
+  color: $dark-gray;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba($primary-color, 0.3);
+
+    &:hover {
+      border-bottom-color: $primary-color;
+    }
+  }
+}
+
+/* --- Section headers with accent --- */
+.section-title {
+  font-family: $header-font-family;
+  font-size: $type-size-3;
+  font-weight: 700;
+  color: $darker-gray;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid $primary-color;
+  display: inline-block;
+  letter-spacing: -0.01em;
+}
+
+/* --- Hero intro section --- */
+.hero-intro {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: $dark-gray;
+
+  strong, b {
+    color: $darker-gray;
+    font-weight: 600;
+  }
+
+  em {
+    font-style: normal;
+    background: linear-gradient(120deg, rgba($primary-color, 0.15) 0%, rgba($accent-color, 0.15) 100%);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($primary-color, 0.3);
+
+    &:hover {
+      color: $primary-dark;
+      border-bottom-color: $primary-dark;
+    }
+  }
+}
+
+/* --- Responsive fixes --- */
+@include breakpoint(max-width $small) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

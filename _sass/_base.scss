@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BASE ELEMENTS
+   BASE ELEMENTS - Modern Typography
    ========================================================================== */
 html {
   /* sticky footer fix */
@@ -13,7 +13,10 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -23,34 +26,43 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
-  line-height: 1.2;
+  line-height: 1.25;
   font-family: $header-font-family;
-  font-weight: bold;
+  font-weight: 600;
+  color: $darker-gray;
 }
 
 h1 {
   margin-top: 0;
-  font-size: $type-size-3;
+  font-size: $type-size-2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: $type-size-4;
+  font-size: $type-size-3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: $type-size-5;
+  font-size: $type-size-4;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: $type-size-6;
+  font-size: $type-size-5;
+  font-weight: 600;
 }
 
 h5 {
   font-size: $type-size-6;
+  font-weight: 600;
 }
 
 h6 {
   font-size: $type-size-6;
+  font-weight: 500;
 }
 
 small, .small {
@@ -94,10 +106,11 @@ abbr[data-original-title] {
 
 blockquote {
   margin: 2em 1em 2em 0;
-  padding-left: 1em;
+  padding-left: 1.5em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  border-left: 3px solid $primary-color;
+  color: $gray;
 
   cite {
     font-style: italic;
@@ -137,13 +150,14 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
   font-size: $type-size-6;
   background: $code-background-color;
-  border: 1px solid $lighter-gray;
+  border: 1px solid $light-gray;
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
 
   &:before, &:after {
     letter-spacing: -0.2em;
@@ -155,7 +169,7 @@ td > code {
 
 hr {
   display: block;
-  margin: 1em 0;
+  margin: 2em 0;
   border: 0;
   border-top: 1px solid $border-color;
 }
@@ -196,9 +210,10 @@ figure {
 
   img {
     width: 100%;
-    border-radius: $border-radius;
+    border-radius: $border-radius-lg;
     -webkit-transition: $global-transition;
     transition: $global-transition;
+    box-shadow: $box-shadow-lg;
   }
 
   > a {
@@ -236,7 +251,7 @@ figure {
 
 figcaption {
   margin-bottom: 0.5em;
-  color: mix(#fff, $text-color, 25%);
+  color: $gray;
   font-family: $caption-font-family;
   font-size: $type-size-6;
 
@@ -248,8 +263,8 @@ figcaption {
     transition: $global-transition;
 
     &:hover {
-      color: #000;
-      border-bottom-color: #000;
+      color: $darker-gray;
+      border-bottom-color: $darker-gray;
     }
   }
 }

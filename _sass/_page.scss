@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SINGLE PAGE/POST
+   SINGLE PAGE/POST - Modern Layout
    ========================================================================== */
 
 #main {
@@ -36,7 +36,10 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.1;
+  font-family: $header-font-family;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -46,6 +49,7 @@
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;
+  color: $gray;
 }
 
 .page__content {
@@ -73,10 +77,14 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 500;
+    border-bottom: 1px solid rgba($primary-color, 0.3);
 
     &:hover {
-      text-decoration: underline;
+      color: $primary-dark;
+      border-bottom-color: $primary-dark;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
@@ -86,13 +94,13 @@
 
   dt {
     margin-top: 1em;
-    font-family: $sans-serif;
+    font-family: $global-font-family;
     font-weight: bold;
   }
 
   dd {
     margin-left: 1em;
-    font-family: $sans-serif;
+    font-family: $global-font-family;
     font-size: $type-size-6;
   }
 
@@ -218,6 +226,7 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 
@@ -227,8 +236,8 @@
 
 .page__meta {
   margin-top: 2em;
-  color: mix(#fff, $gray, 25%);
-  font-family: $sans-serif;
+  color: $gray;
+  font-family: $global-font-family;
   font-size: $type-size-6;
 
   p {
@@ -244,6 +253,7 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 
@@ -268,11 +278,16 @@
   padding: 5px 10px;
   text-decoration: none;
   border: 1px solid $light-gray;
-  border-radius: $border-radius;
+  border-radius: 999px;
+  font-size: $type-size-6;
+  font-weight: 500;
+  transition: $global-transition;
 
   &:hover {
     text-decoration: none;
-    color: $link-color-hover;
+    color: $primary-color;
+    border-color: rgba($primary-color, 0.3);
+    background: rgba($primary-color, 0.06);
   }
 }
 
@@ -292,11 +307,13 @@
   font-size: $type-size-6;
   border-top: 1px solid $border-color;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .page__comments-form {
   padding: 1em;
   background: $lighter-gray;
+  border-radius: $border-radius-lg;
   transition: $global-transition;
 
   &.disabled {
@@ -398,4 +415,5 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
