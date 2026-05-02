@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TABLES - Refined Design
+   TABLES - Dark Navy Academic Design
    ========================================================================== */
 
 table {
@@ -8,8 +8,8 @@ table {
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 1px solid rgba($navy-light, 0.15);
+  border-radius: $border-radius-lg;
 
   & + table {
     margin-top: $space-4;
@@ -17,27 +17,28 @@ table {
 }
 
 thead {
-  background-color: $primary-50;
-  border-bottom: 2px solid $primary-200;
+  background-color: $surface-1;
+  border-bottom: 2px solid rgba($accent-color, 0.3);
 }
 
 th {
   padding: $space-2 $space-3;
   font-weight: 600;
   text-align: left;
-  color: $darker-gray;
-  border-right: 1px solid $border-color;
+  color: $text-color;
+  border-right: 1px solid rgba($navy-light, 0.15);
 }
 
 td {
   padding: $space-2 $space-3;
-  border-bottom: 1px solid $border-color;
-  border-right: 1px solid $border-color;
+  border-bottom: 1px solid rgba($navy-light, 0.15);
+  border-right: 1px solid rgba($navy-light, 0.15);
+  color: $text-secondary;
 }
 
 tr {
   &:hover {
-    background-color: $primary-50;
+    background-color: rgba($surface-1, 0.3);
   }
 
   &:last-child td {

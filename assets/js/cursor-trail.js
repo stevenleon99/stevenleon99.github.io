@@ -1,8 +1,8 @@
 /* ==========================================================================
    CURSOR TRAIL EFFECT — Star Cluster + Bubble Trail + Click Burst
-   - Orbiting star cluster following cursor
+   - Orbiting star cluster following cursor (navy/coral palette)
    - Growing bubbles that burst (pop) behind the cursor
-   - Random colorful bubble burst on click
+   - Click burst with coral accent
    ========================================================================== */
 
 (function () {
@@ -14,16 +14,14 @@
   var visible = false;
   var tick = 0;
 
-  /* --- Bubble color palette (soft pastels) --- */
+  /* --- Bubble color palette (navy + coral academic theme) --- */
   var COLORS = [
-    'rgba(147, 197, 253, __A__)',   // light blue
-    'rgba(196, 181, 253, __A__)',   // lavender
-    'rgba(167, 243, 208, __A__)',   // mint
-    'rgba(253, 186, 116, __A__)',   // peach
-    'rgba(249, 168, 212, __A__)',   // pink
-    'rgba(254, 240, 138, __A__)',   // lemon
-    'rgba(103, 232, 249, __A__)',   // cyan
-    'rgba(252, 165, 165, __A__)',   // coral
+    'rgba(127, 166, 191, __A__)',   // navy-light - #7FA6BF
+    'rgba(201, 220, 232, __A__)',   // navy-pale - #C9DCE8
+    'rgba(79, 122, 155, __A__)',    // navy-soft - #4F7A9B
+    'rgba(242, 175, 164, __A__)',   // coral accent - #F2AFA4
+    'rgba(245, 196, 187, __A__)',   // coral-light - #F5C4BB
+    'rgba(51, 92, 129, __A__)',     // navy-mid - #335C81
   ];
 
   function color(alpha) {

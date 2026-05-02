@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BUTTONS - Monochromatic System
+   BUTTONS - Dark Navy Minimalist System
    ========================================================================== */
 
 /*
@@ -12,27 +12,30 @@
   align-items: center;
   justify-content: center;
   margin-bottom: $space-1;
-  padding: 0.5em 1.25em;
-  color: #fff !important;
+  padding: 0.6em 1.5em;
+  color: $text-dark !important;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  background-color: $primary-600;
+  background-color: $text-color;
   border: 0 !important;
-  border-radius: $border-radius;
+  border-radius: $border-radius-pill;
   cursor: pointer;
-  transition: $transition-fast;
+  transition: $transition-smooth;
   line-height: 1.5;
 
   &:hover {
-    background-color: $primary-700;
-    color: #fff !important;
+    background-color: $navy-pale;
+    color: $text-dark !important;
+    box-shadow: $box-shadow-glow;
+    transform: translateY(-1px);
   }
 
   &:active {
-    background-color: $primary-800;
+    background-color: $text-secondary;
+    transform: translateY(0);
   }
 
   &:focus-visible {
@@ -59,39 +62,47 @@
     }
   }
 
-  /* for dark backgrounds */
+  /* for dark backgrounds - accent coral */
 
   &--inverse {
-    color: $primary-700 !important;
-    border: 1px solid $primary-200 !important; /* override*/
-    background-color: #fff;
-    transition: $transition-fast;
+    color: $text-color !important;
+    border: 1px solid rgba($navy-light, 0.3) !important; /* override*/
+    background-color: rgba($surface-1, 0.6);
+    transition: $transition-smooth;
 
     &:hover {
-      color: #fff !important;
-      background-color: $primary-600;
-      border-color: $primary-600 !important;
+      color: $text-color !important;
+      background-color: $surface-1;
+      border-color: rgba($navy-light, 0.5) !important;
+      transform: translateY(-1px);
     }
   }
 
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid rgba($text-color, 0.4) !important; /* override*/
     background-color: transparent;
+    color: $text-color !important;
+
+    &:hover {
+      background-color: rgba($text-color, 0.1);
+      border-color: $text-color !important;
+    }
   }
 
   /* outline variant */
 
   &--outline {
     background-color: transparent;
-    color: $primary-600 !important;
-    border: 1px solid $primary-200 !important;
+    color: $text-secondary !important;
+    border: 1px solid rgba($navy-light, 0.3) !important;
+    border-radius: $border-radius-pill;
 
     &:hover {
-      background-color: $primary-50;
-      border-color: $primary-400 !important;
-      color: $primary-700 !important;
+      background-color: rgba($surface-1, 0.4);
+      border-color: $navy-light !important;
+      color: $text-color !important;
     }
   }
 
@@ -99,50 +110,67 @@
 
   &--ghost {
     background-color: transparent;
-    color: $primary-600 !important;
+    color: $text-secondary !important;
 
     &:hover {
-      background-color: $primary-50;
+      background-color: rgba($surface-1, 0.3);
+      color: $text-color !important;
     }
   }
 
-  /* information - using primary mid tone */
+  /* accent button - coral highlight */
+
+  &--accent {
+    background-color: $accent-color;
+    color: $navy-deep !important;
+
+    &:hover {
+      background-color: $accent-light;
+      box-shadow: $box-shadow-glow;
+      transform: translateY(-1px);
+    }
+  }
+
+  /* information */
 
   &--info {
-    background-color: $primary-500;
+    background-color: $navy-mid;
 
     &:hover {
-      background-color: $primary-600;
+      background-color: $navy-soft;
     }
   }
 
-  /* warning - using primary lighter tone */
+  /* warning */
 
   &--warning {
-    background-color: $primary-400;
+    background-color: $accent-color;
+    color: $navy-deep !important;
 
     &:hover {
-      background-color: $primary-500;
+      background-color: $accent-light;
     }
   }
 
-  /* success - using primary dark tone */
+  /* success */
 
   &--success {
-    background-color: $primary-700;
+    background-color: $navy-mid;
+    color: $text-color !important;
 
     &:hover {
-      background-color: $primary-800;
+      background-color: $navy-soft;
     }
   }
 
-  /* danger - using primary darkest tone */
+  /* danger */
 
   &--danger {
-    background-color: $primary-800;
+    background-color: $accent-color;
+    color: $navy-deep !important;
 
     &:hover {
-      background-color: $primary-900;
+      background-color: darken($accent-color, 10%);
     }
   }
 
@@ -151,9 +179,7 @@
   &--disabled {
     pointer-events: none;
     cursor: not-allowed;
-    filter: grayscale(40%);
-    box-shadow: none;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   /* social buttons */
@@ -178,20 +204,20 @@
 
   &--x-large {
     font-size: $type-size-4;
-    padding: 0.6em 1.5em;
+    padding: 0.7em 1.8em;
   }
 
   /* large button */
 
   &--large {
     font-size: $type-size-5;
-    padding: 0.55em 1.35em;
+    padding: 0.6em 1.5em;
   }
 
   /* small button */
 
   &--small {
     font-size: $type-size-7;
-    padding: 0.4em 0.9em;
+    padding: 0.4em 1em;
   }
 }

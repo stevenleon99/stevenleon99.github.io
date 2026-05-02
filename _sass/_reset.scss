@@ -1,5 +1,5 @@
 /* ==========================================================================
-   STYLE RESETS
+   STYLE RESETS - Dark Navy Base
    ========================================================================== */
 
 @include border-box-sizing;
@@ -25,13 +25,13 @@ body { margin: 0; }
 /* Selected elements */
 
 ::-moz-selection {
-  color: #fff;
-  background: $primary-color;
+  color: $text-color;
+  background: rgba($accent-color, 0.4);
 }
 
 ::selection {
-  color: #fff;
-  background: $primary-color;
+  color: $text-color;
+  background: rgba($accent-color, 0.4);
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */

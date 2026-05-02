@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ARCHIVE - Refined Layout
+   ARCHIVE - Dark Navy Layout
    ========================================================================== */
 
 .archive {
@@ -16,11 +16,11 @@
 
   a {
     text-decoration: underline;
-    color: $primary-600;
+    color: $navy-pale;
 
     &:hover {
       text-decoration: underline;
-      color: $primary-800;
+      color: $accent-color;
 
       img {
         box-shadow: $box-shadow-md;
@@ -33,8 +33,8 @@
   margin: 1.414em 0 0;
   padding-bottom: $space-3;
   font-size: $type-size-5;
-  color: $gray;
-  border-bottom: 1px solid $border-color;
+  color: $text-muted;
+  border-bottom: 1px solid rgba($navy-light, 0.15);
 
   + .list__item .archive__item-title {
     margin-top: $space-2;
@@ -45,7 +45,7 @@
   margin-bottom: $space-1;
   font-family: $sans-serif-narrow;
   font-weight: 600;
-  color: $darker-gray;
+  color: $text-color;
 
   a + a {
     opacity: 0.5;
@@ -64,7 +64,7 @@
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
-  color: $gray;
+  color: $text-muted;
   line-height: 1.6;
 
   & + p {
@@ -73,7 +73,7 @@
 }
 
 .archive__item-teaser {
-  border-radius: $border-radius;
+  border-radius: $border-radius-lg;
   overflow: hidden;
 
   img {
@@ -84,12 +84,12 @@
 .archive__item:hover {
   .archive__item-teaser {
     box-shadow: $box-shadow-md;
-    border: 1px solid $primary-200;
+    border: 1px solid rgba($accent-color, 0.25);
   }
 
   .archive__item-title {
     text-decoration: underline;
-    color: $primary-700;
+    color: $accent-color;
   }
 }
 
@@ -168,7 +168,7 @@
 .feature__wrapper {
   @include clearfix();
   margin-bottom: $space-6;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid rgba($navy-light, 0.15);
 }
 
 .feature__item {

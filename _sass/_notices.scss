@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NOTICE TEXT BLOCKS - Monochromatic Refinement
+   NOTICE TEXT BLOCKS - Dark Navy Academic System
    ========================================================================== */
 
 /**
@@ -16,14 +16,15 @@
   font-family: $global-font-family;
   font-size: $type-size-6 !important;
   text-indent: initial; /* override*/
-  background-color: mix(#fff, $notice-color, 92%);
-  border-radius: $border-radius;
-  border: 1px solid mix(#fff, $notice-color, 80%);
+  background-color: rgba($notice-color, 0.08);
+  border-radius: $border-radius-lg;
+  border: 1px solid rgba($notice-color, 0.2);
   border-left: 3px solid $notice-color;
 
   h4 {
     margin-top: 0 !important; /* override*/
     margin-bottom: $space-3;
+    color: $text-color;
   }
 
   @at-root .page__content #{&} h4 {
@@ -45,18 +46,18 @@
   }
 
   a {
-    color: darken($notice-color, 15%);
+    color: $notice-color;
     font-weight: 500;
     border-bottom: 1px solid rgba($notice-color, 0.3);
 
     &:hover {
-      color: darken($notice-color, 25%);
-      border-bottom-color: darken($notice-color, 15%);
+      color: lighten($notice-color, 15%);
+      border-bottom-color: $notice-color;
     }
   }
 
   code {
-    background-color: mix(#fff, $notice-color, 95%)
+    background-color: rgba($notice-color, 0.12)
   }
 
   ul {
@@ -69,35 +70,35 @@
 /* Default notice */
 
 .notice {
-  @include notice($gray);
+  @include notice($navy-soft);
 }
 
 /* Primary notice */
 
 .notice--primary {
-  @include notice($primary-600);
+  @include notice($navy-pale);
 }
 
 /* Info notice */
 
 .notice--info {
-  @include notice($primary-500);
+  @include notice($navy-light);
 }
 
-/* Warning notice */
+/* Warning notice - uses accent coral */
 
 .notice--warning {
-  @include notice($primary-400);
+  @include notice($accent-color);
 }
 
 /* Success notice */
 
 .notice--success {
-  @include notice($primary-700);
+  @include notice($navy-mid);
 }
 
-/* Danger notice */
+/* Danger notice - uses accent */
 
 .notice--danger {
-  @include notice($primary-800);
+  @include notice($accent-color);
 }

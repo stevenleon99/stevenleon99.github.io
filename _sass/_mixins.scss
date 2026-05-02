@@ -1,12 +1,12 @@
 /* ==========================================================================
-   MIXINS
+   MIXINS - Dark Navy Focus States
    ========================================================================== */
 
 %tab-focus {
   /* Default*/
-  outline: thin dotted $primary-600;
+  outline: thin dotted $accent-color;
   /* Webkit*/
-  outline: 5px auto $primary-600;
+  outline: 5px auto $accent-color;
   outline-offset: -2px;
 }
 

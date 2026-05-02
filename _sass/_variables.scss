@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Variables - Cohesive Monochromatic Design System
-   Professional, academic, data-driven aesthetic
+   Variables - Unified Dark Navy Design System
+   Minimalist, professional, academically refined aesthetic
    ========================================================================== */
 
 /*
-   Typography - Refined Academic Font Stack
+   Typography - Modern Academic Font Stack
    ========================================================================== */
 
 $doc-font-size              : 16;
@@ -13,9 +13,9 @@ $doc-font-size              : 16;
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* Artistic typefaces */
-$serif                      : "Crimson Pro", Georgia, "Times New Roman", Times, serif;
-$sans-serif                 : "Crimson Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+/* Modern academic typefaces */
+$serif                      : "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$sans-serif                 : "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $monospace                  : "JetBrains Mono", "Fira Code", "Cascadia Code", Monaco, Consolas, "Lucida Console", monospace;
 
 /* sans serif typefaces */
@@ -25,19 +25,16 @@ $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 /* serif typefaces */
 $georgia                    : Georgia, serif;
 $times                      : Times, serif;
-$bodoni                     : "Bodoni MT", serif;
-$calisto                    : "Calisto MT", serif;
-$garamond                   : Garamond, serif;
 
-$global-font-family         : $serif;
-$header-font-family         : "Playfair Display", $serif;
-$caption-font-family        : $serif;
+$global-font-family         : $sans-serif;
+$header-font-family         : $sans-serif;
+$caption-font-family        : $sans-serif;
 
 /* type scale - Refined modular scale for academic hierarchy */
-$type-size-1                : 2.25em;   // ~36px - Hero
-$type-size-2                : 1.75em;   // ~28px - H1
-$type-size-3                : 1.375em;  // ~22px - H2
-$type-size-4                : 1.125em;  // ~18px - H3
+$type-size-1                : 2.5em;    // ~40px - Hero
+$type-size-2                : 2em;      // ~32px - H1
+$type-size-3                : 1.5em;    // ~24px - H2
+$type-size-4                : 1.25em;   // ~20px - H3
 $type-size-5                : 1em;      // ~16px - Body
 $type-size-6                : 0.875em;  // ~14px - Small
 $type-size-7                : 0.75em;   // ~12px - XSmall
@@ -45,59 +42,67 @@ $type-size-8                : 0.6875em; // ~11px
 
 
 /*
-   Colors - Monochromatic Blue Palette
-   Single-hue system with intensity variations for hierarchy
+   Colors - Monochromatic Navy Palette with Coral Accent
+   Single-hue system derived from #1E3A5F
    ========================================================================== */
 
-/* Primary scale - 10-step monochromatic blue */
-$primary-50                 : #eff6ff;
-$primary-100                : #dbeafe;
-$primary-200                : #bfdbfe;
-$primary-300                : #93c5fd;
-$primary-400                : #60a5fa;
-$primary-500                : #3b82f6;   // Base primary
-$primary-600                : #2563eb;   // Default interactive
-$primary-700                : #1d4ed8;   // Hover / emphasis
-$primary-800                : #1e40af;   // Active / strong emphasis
-$primary-900                : #1e3a8a;   // Deepest accent
-$primary-950                : #172554;   // Near-black blue
+/* Primary scale - 10-step monochromatic navy derived from #1E3A5F */
+$primary-100                : #1E3A5F;  // Base primary (deep academic navy)
+$primary-200                : #335C81;  // 80% intensity
+$primary-300                : #4F7A9B;  // 60% intensity
+$primary-400                : #7FA6BF;  // 40% intensity
+$primary-500                : #C9DCE8;  // 20% intensity (secondary text)
+$primary-600                : #EAF2F7;  // 10% intensity (lightest)
 
-/* Semantic aliases (mapped to primary scale) */
-$primary-color              : $primary-600;
-$primary-dark               : $primary-700;
-$primary-light              : $primary-400;
+/* Alternate naming for semantic use */
+$navy-deep                  : #1E3A5F;  // 100% - Primary
+$navy-mid                   : #335C81;  // 80%
+$navy-soft                  : #4F7A9B;  // 60%
+$navy-light                 : #7FA6BF;  // 40%
+$navy-pale                  : #C9DCE8;  // 20%
+$navy-subtle                : #EAF2F7;  // 10%
 
-/* Accent colors - reserved for special use, derived from primary */
-$accent-color               : $primary-500;
-$accent-secondary           : $primary-800;
+/* Accent color - muted coral for icons/buttons only */
+$accent-color               : #F2AFA4;   // Muted coral
+$accent-light               : #F5C4BB;   // Lighter coral
 
-/* Neutral scale - Blue-toned for monochromatic coherence */
-$gray                       : #64748b;
-$dark-gray                  : $primary-900;   // #1e3a8a - dark blue
-$darker-gray                : $primary-950;   // #172554 - deepest blue
-$light-gray                 : #e2e8f0;
-$lighter-gray               : #f8fafc;
+/* Background colors - Dark navy system */
+$background-color           : #0F2740;   // Main background (dark navy)
+$surface-1                  : #2E4A62;   // Card background (elevated)
+$surface-2                  : #1E3A5F;   // Secondary surface
+$surface-3                  : #335C81;   // Higher elevation
+$surface-overlay            : rgba(#1E3A5F, 0.85);
 
-/* Semantic colors - derived from primary for monochromatic coherence */
-$body-color                 : #ffffff;
-$background-color           : #ffffff;
-$code-background-color      : $primary-50;
-$code-background-color-dark : $primary-100;
-$text-color                 : $primary-900;   // Dark blue body text
-$border-color               : $light-gray;
+/* Text colors - Light on dark */
+$text-color                 : #FFFFFF;   // Primary text (white)
+$text-secondary             : #C9DCE8;   // Secondary text (20% navy)
+$text-muted                 : #7FA6BF;   // Muted text (40% navy)
+$text-dark                  : #1E3A5F;   // For light backgrounds only
 
-$success-color              : $primary-700;
-$warning-color              : $primary-500;
-$danger-color               : $primary-800;
-$info-color                 : $primary-500;
+/* Semantic aliases */
+$primary-color              : $primary-100;
+$primary-dark               : $navy-deep;
+$primary-light              : $navy-soft;
 
-/* Surface colors - for layered depth */
-$surface-1                  : #ffffff;
-$surface-2                  : $primary-50;
-$surface-3                  : $primary-100;
-$surface-overlay            : rgba($primary-950, 0.04);
+/* Code backgrounds */
+$code-background-color      : #1E3A5F;
+$code-background-color-dark : #0F2740;
 
-/* brands */
+/* Neutral scale - for borders and subtle elements */
+$gray                       : $navy-light;
+$dark-gray                  : $navy-soft;
+$darker-gray                : $navy-mid;
+$light-gray                 : $navy-pale;
+$lighter-gray               : $navy-subtle;
+$border-color               : rgba(#7FA6BF, 0.2);
+
+/* Semantic colors - info/warning/danger mapped to navy/accent */
+$success-color              : $navy-mid;
+$warning-color              : $accent-color;
+$danger-color               : $accent-color;
+$info-color                 : $navy-soft;
+
+/* brands - kept for social icons */
 $behance-color              : #1769FF;
 $dribbble-color             : #ea4c89;
 $facebook-color             : #3b5998;
@@ -120,16 +125,16 @@ $youtube-color              : #FF0000;
 $xing-color                 : #006567;
 
 
-/* links */
-$link-color                 : $primary-600;
-$link-color-hover           : $primary-800;
-$link-color-visited         : $primary-700;
-$masthead-link-color        : $dark-gray;
-$masthead-link-color-hover  : $primary-600;
+/* links - light on dark */
+$link-color                 : $navy-pale;
+$link-color-hover           : #FFFFFF;
+$link-color-visited         : $navy-light;
+$masthead-link-color        : $text-secondary;
+$masthead-link-color-hover  : #FFFFFF;
 
 
 /*
-   Spacing System - Consistent 4px base
+   Spacing System - Consistent 8px base (0.5em)
    ========================================================================== */
 
 $space-1                    : 0.25em;   // 4px
@@ -178,17 +183,27 @@ $susy: (
    Design Tokens - Elevation, Radius, Motion
    ========================================================================== */
 
-$border-radius              : 6px;
-$border-radius-lg           : 10px;
+$border-radius              : 8px;
+$border-radius-lg           : 12px;
 $border-radius-xl           : 16px;
+$border-radius-pill         : 24px;
 
-$box-shadow                 : 0 1px 2px rgba($primary-950, 0.05), 0 1px 3px rgba($primary-950, 0.04);
-$box-shadow-md              : 0 2px 4px rgba($primary-950, 0.06), 0 4px 8px rgba($primary-950, 0.04);
-$box-shadow-lg              : 0 4px 8px rgba($primary-950, 0.06), 0 8px 24px rgba($primary-950, 0.05);
-$box-shadow-focus           : 0 0 0 3px rgba($primary-500, 0.25);
+/* Soft shadows for dark theme */
+$box-shadow                 : 0 2px 8px rgba(#0F2740, 0.3), 0 1px 4px rgba(#1E3A5F, 0.2);
+$box-shadow-md              : 0 4px 16px rgba(#0F2740, 0.4), 0 2px 8px rgba(#1E3A5F, 0.3);
+$box-shadow-lg              : 0 8px 32px rgba(#0F2740, 0.5), 0 4px 16px rgba(#1E3A5F, 0.4);
+$box-shadow-focus           : 0 0 0 3px rgba($accent-color, 0.3);
+$box-shadow-glow            : 0 0 20px rgba($accent-color, 0.15);
+
+/* Hover elevation */
+$box-shadow-hover           : 0 6px 24px rgba(#0F2740, 0.5), 0 3px 12px rgba(#1E3A5F, 0.4);
+$box-shadow-card-hover      : 0 8px 40px rgba(#0F2740, 0.6), 0 4px 20px rgba($accent-color, 0.1);
 
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$global-transition          : all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-$transition-fast            : all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+/* Smooth transitions for calm academic aesthetic */
+$global-transition          : all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast            : all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 $transition-slow            : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-smooth          : all 0.25s ease-out;
