@@ -1,0 +1,289 @@
+/* ==========================================================================
+   SPECIAL EFFECTS - Mouse Trail, Glow, Shimmer, Entrance Animations
+   ========================================================================== */
+
+/* --- Mouse Trail Dot --- */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: $primary-500;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 6px 2px rgba($primary-500, 0.5);
+}
+
+.cursor-dot.visible {
+  opacity: 1;
+}
+
+.cursor-dot-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba($primary-400, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.4s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor-dot-trail.visible {
+  opacity: 1;
+}
+
+/* Expand ring when hovering interactive elements */
+.cursor-dot-trail.hovering {
+  width: 52px;
+  height: 52px;
+  border-color: rgba($primary-500, 0.6);
+}
+
+
+/* --- Tag Glow on Hover --- */
+.tag {
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0 12px 2px rgba($primary-400, 0.45),
+                0 0 4px 1px rgba($primary-500, 0.25);
+    transform: translateY(-1px);
+    z-index: 1;
+  }
+}
+
+.tag--lang:hover {
+  box-shadow: 0 0 14px 3px rgba($primary-500, 0.5),
+              0 0 5px 1px rgba($primary-600, 0.3);
+}
+
+.tag--tech:hover {
+  box-shadow: 0 0 12px 2px rgba($primary-400, 0.45),
+              0 0 4px 1px rgba($primary-500, 0.25);
+}
+
+.tag--field:hover {
+  box-shadow: 0 0 10px 2px rgba($primary-300, 0.4),
+              0 0 4px 1px rgba($primary-400, 0.2);
+}
+
+.tag--org:hover {
+  box-shadow: 0 0 10px 2px rgba($primary-300, 0.35),
+              0 0 4px 1px rgba($primary-400, 0.2);
+}
+
+
+/* --- Link Hover Glow --- */
+.page__content {
+  a:not(.btn):not(.project-card):not(.tag) {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $primary-400, $primary-600);
+      border-radius: 1px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 6px rgba($primary-500, 0.3);
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $primary-700;
+      text-shadow: 0 0 8px rgba($primary-400, 0.2);
+    }
+  }
+}
+
+
+/* --- Project Card Shimmer on Hover --- */
+.project-card {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba($primary-400, 0.06) 45%,
+      rgba($primary-400, 0.1) 50%,
+      rgba($primary-400, 0.06) 55%,
+      transparent 60%
+    );
+    z-index: 2;
+    transition: none;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    animation: card-shimmer 0.7s ease forwards;
+  }
+}
+
+@keyframes card-shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+
+/* --- Page Entrance Animations --- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Staggered entrance for page elements */
+.page__content {
+  .section-title {
+    animation: fade-up 0.5s ease both;
+    animation-delay: 0.1s;
+  }
+
+  .hero-intro {
+    animation: fade-up 0.5s ease both;
+    animation-delay: 0.2s;
+  }
+
+  .project-grid .project-card {
+    animation: fade-up 0.5s ease both;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.15s + ($i * 0.08s);
+      }
+    }
+  }
+
+  .timeline .timeline-item {
+    animation: fade-up 0.5s ease both;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.1s + ($i * 0.08s);
+      }
+    }
+  }
+
+  .tag-group {
+    animation: fade-up 0.4s ease both;
+    animation-delay: 0.25s;
+  }
+
+  .stat-card {
+    animation: fade-up 0.5s ease both;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.2s + ($i * 0.07s);
+      }
+    }
+  }
+}
+
+
+/* --- Timeline dot pulse --- */
+.timeline-item::before {
+  animation: dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px $primary-100; }
+  50% { box-shadow: 0 0 0 6px rgba($primary-500, 0.15), 0 0 0 3px $primary-100; }
+}
+
+
+/* --- Masthead link underline sweep --- */
+.greedy-nav a.site-title,
+.greedy-nav .visible-links a {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $primary-500;
+    border-radius: 1px;
+    transition: width 0.3s ease, left 0.3s ease;
+    box-shadow: 0 0 4px rgba($primary-500, 0.3);
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+
+/* --- Author card social icon glow --- */
+.author__urls.social-icons a {
+  transition: $transition-fast;
+
+  &:hover {
+    color: $primary-600;
+    filter: drop-shadow(0 0 4px rgba($primary-400, 0.5));
+    transform: translateY(-1px);
+  }
+}
+
+
+/* --- Smooth page fade on load --- */
+.page {
+  animation: fade-in 0.4s ease;
+}
+
+
+/* --- Disable effects on mobile / reduced motion --- */
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-dot-trail {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
