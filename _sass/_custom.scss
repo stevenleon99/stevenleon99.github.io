@@ -231,22 +231,22 @@
 .hero-intro {
   font-size: 1.05em;
   line-height: 1.8;
-  color: $dark-gray;
+  color: $primary-800;
 
   strong, b {
-    color: $darker-gray;
-    font-weight: 600;
+    color: $primary-900;
+    font-weight: 400;
   }
 
   em {
-    font-style: normal;
-    font-weight: 600;
-    color: $darker-gray;
+    font-style: italic;
+    font-weight: 400;
+    color: $primary-700;
   }
 
   a {
     color: $primary-600;
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
     border-bottom: 1px solid $primary-200;
 

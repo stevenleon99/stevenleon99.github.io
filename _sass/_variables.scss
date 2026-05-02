@@ -71,10 +71,10 @@ $primary-light              : $primary-400;
 $accent-color               : $primary-500;
 $accent-secondary           : $primary-800;
 
-/* Neutral scale - Cool-toned grays with blue undertone */
+/* Neutral scale - Blue-toned for monochromatic coherence */
 $gray                       : #64748b;
-$dark-gray                  : #1e293b;
-$darker-gray                : #0f172a;
+$dark-gray                  : $primary-900;   // #1e3a8a - dark blue
+$darker-gray                : $primary-950;   // #172554 - deepest blue
 $light-gray                 : #e2e8f0;
 $lighter-gray               : #f8fafc;
 
@@ -83,7 +83,7 @@ $body-color                 : #ffffff;
 $background-color           : #ffffff;
 $code-background-color      : $primary-50;
 $code-background-color-dark : $primary-100;
-$text-color                 : $dark-gray;
+$text-color                 : $primary-900;   // Dark blue body text
 $border-color               : $light-gray;
 
 $success-color              : $primary-700;
