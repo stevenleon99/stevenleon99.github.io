@@ -10,20 +10,49 @@ redirect_from:
 
 <div class="hero-intro">
 <p>
-I am an experienced <em>System Verification, Electromechanical Design, and Software Development Engineer</em> with a strong interest and expertise in <em>Surgical Robotics and Visualization Technologies</em>. Previously at <a href="https://www.medtronic.com/us-en/healthcare-professionals/products/spinal-orthopaedic.html">Medtronic (2018 - 2023)</a>, my work revolves around <em>Robotic Subsystem Design, Software Test, Integration Test, Systematic Verification and Accuracy Optimization</em>, specifically in Orthopedic and Neurological robotics. Eager to make disruptive innovations in the surgical robotics industry, I am currently pursuing an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Johns Hopkins University</a>.
+I am an experienced <em>System Verification, Electromechanical Design,
+and Software Development Engineer</em> with a strong interest and
+expertise in <em>Surgical Robotics and Visualization Technologies</em>.
+Previously at <a href="https://www.medtronic.com/us-en/healthcare-professionals/products/spinal-orthopaedic.html">Medtronic (2018 - 2023)</a>, my work revolves around
+<em>Robotic Subsystem Design, Software Test, Integration Test,
+Systematic Verification and Accuracy Optimization</em>, specifically
+in Orthopedic and Neurological robotics. Eager to make disruptive
+innovations in the surgical robotics industry, I am currently pursuing
+an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Johns Hopkins University</a>.
 </p>
 </div>
 
-<div class="tag-group" style="margin-top: 0.5em; margin-bottom: 1.5em;">
-  <span class="tag tag--field">Surgical Robotics</span>
-  <span class="tag tag--tech">dVRK</span>
-  <span class="tag tag--field">System Verification</span>
-  <span class="tag tag--field">DDS Middleware</span>
-  <span class="tag tag--field">3D Segmentation</span>
-  <span class="tag tag--lang">C++</span>
-  <span class="tag tag--lang">Python</span>
-  <span class="tag tag--tech">ROS2</span>
-  <span class="tag tag--lang">MATLAB</span>
+<div class="skill-section">
+  <div class="skill-category">
+    <span class="skill-category__label skill-category__label--tech">Technology</span>
+    <div class="tag-group">
+      <span class="tag tag--tech">Surgical Robotics</span>
+      <span class="tag tag--tech">dVRK</span>
+      <span class="tag tag--tech">DDS Middleware</span>
+      <span class="tag tag--tech">ROS2</span>
+      <span class="tag tag--tech">Deep Learning</span>
+      <span class="tag tag--tech">3D Segmentation</span>
+      <span class="tag tag--tech">System Verification</span>
+    </div>
+  </div>
+  <div class="skill-category">
+    <span class="skill-category__label skill-category__label--lang">Programming</span>
+    <div class="tag-group">
+      <span class="tag tag--lang">C++</span>
+      <span class="tag tag--lang">Python</span>
+      <span class="tag tag--lang">MATLAB</span>
+    </div>
+  </div>
+  <div class="skill-category">
+    <span class="skill-category__label skill-category__label--comp">Core Competencies</span>
+    <div class="tag-group">
+      <span class="tag tag--comp">Robotic Subsystem Design</span>
+      <span class="tag tag--comp">Integration Testing</span>
+      <span class="tag tag--comp">Accuracy Optimization</span>
+      <span class="tag tag--comp">Cross-functional Collaboration</span>
+      <span class="tag tag--comp">Technical Problem Solving</span>
+    </div>
+  </div>
 </div>
 
 ## Selected Experience
