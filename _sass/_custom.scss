@@ -238,11 +238,11 @@ p {
     color: $navy-pale;
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 1px solid rgba($navy-light, 0.3);
+    border-bottom: none;
 
     &:hover {
       color: $accent-color;
-      border-bottom-color: $accent-color;
+      border-bottom: none;
     }
   }
 }
@@ -281,11 +281,11 @@ p {
     color: $navy-pale;
     font-weight: 400;
     text-decoration: none;
-    border-bottom: 1px solid rgba($navy-light, 0.3);
+    border-bottom: none;
 
     &:hover {
       color: $accent-color;
-      border-bottom-color: $accent-color;
+      border-bottom: none;
     }
   }
 
@@ -350,9 +350,12 @@ p {
 
 /* --- Global link underline cleanup for cards --- */
 .project-card,
-.project-card:hover {
-  a, h3, p, span {
-    text-decoration: none;
-    border-bottom: none;
+.project-card:hover,
+.project-card *,
+.project-card *:hover {
+  &,
+  a, h3, h4, p, span, div, u, ins, em, strong, li {
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 }
