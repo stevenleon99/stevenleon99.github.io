@@ -1,51 +1,17 @@
 /* ==========================================================================
-   SPECIAL EFFECTS - Mouse Trail, Glow, Shimmer, Entrance Animations
+   SPECIAL EFFECTS - Shooting Stars, Glow, Shimmer, Entrance Animations
    ========================================================================== */
 
-/* --- Mouse Trail Dot --- */
-.cursor-dot {
+/* --- Shooting Star Particles --- */
+.shooting-star {
   position: fixed;
   top: 0;
   left: 0;
-  width: 8px;
-  height: 8px;
-  background: $primary-500;
-  border-radius: 50%;
+  background: rgba($primary-300, 0.12);
+  box-shadow: 0 0 4px rgba($primary-400, 0.18),
+              0 0 8px rgba($primary-200, 0.08);
   pointer-events: none;
   z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  mix-blend-mode: screen;
-  box-shadow: 0 0 6px 2px rgba($primary-500, 0.5);
-}
-
-.cursor-dot.visible {
-  opacity: 1;
-}
-
-.cursor-dot-trail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba($primary-400, 0.35);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0;
-  transition: opacity 0.4s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
-}
-
-.cursor-dot-trail.visible {
-  opacity: 1;
-}
-
-/* Expand ring when hovering interactive elements */
-.cursor-dot-trail.hovering {
-  width: 52px;
-  height: 52px;
-  border-color: rgba($primary-500, 0.6);
 }
 
 
@@ -272,8 +238,7 @@
 
 /* --- Disable effects on mobile / reduced motion --- */
 @media (hover: none) {
-  .cursor-dot,
-  .cursor-dot-trail {
+  .shooting-star {
     display: none !important;
   }
 }
