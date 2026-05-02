@@ -29,11 +29,15 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
     <span class="tag tag--lang">MATLAB</span>
     <span class="tag tag--tech">Surgical Robotics</span>
     <span class="tag tag--tech">dVRK</span>
+    <span class="tag tag--tech">DDS</span>
     <span class="tag tag--tech">DDS Middleware</span>
     <span class="tag tag--tech">ROS2</span>
     <span class="tag tag--tech">Deep Learning</span>
     <span class="tag tag--tech">3D Segmentation</span>
     <span class="tag tag--tech">System Verification</span>
+    <span class="tag tag--tech">Orthopedic Robotics</span>
+    <span class="tag tag--tech">Robot Control</span>
+    <span class="tag tag--tech">Automation</span>
     <span class="tag tag--comp">Robotic Subsystem Design</span>
     <span class="tag tag--comp">Integration Testing</span>
     <span class="tag tag--comp">Accuracy Optimization</span>
@@ -68,8 +72,8 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
       <p>Robotic subsystem design and systematic verification for spinal surgery</p>
       <div class="tag-group">
         <span class="tag tag--org">Medtronic</span>
-        <span class="tag tag--field">Verification</span>
-        <span class="tag tag--field">Orthopedic</span>
+        <span class="tag tag--tech">System Verification</span>
+        <span class="tag tag--tech">Orthopedic Robotics</span>
       </div>
     </div>
   </a>
@@ -82,7 +86,7 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
       <p>Machine learning approach for volumetric medical image segmentation</p>
       <div class="tag-group">
         <span class="tag tag--tech">Deep Learning</span>
-        <span class="tag tag--field">3D Segmentation</span>
+        <span class="tag tag--tech">3D Segmentation</span>
         <span class="tag tag--lang">Python</span>
       </div>
     </div>
@@ -95,9 +99,9 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
       <h3>General Industrial Robot Control Platform</h3>
       <p>Universal control platform for industrial robot manipulators</p>
       <div class="tag-group">
-        <span class="tag tag--field">Robot Control</span>
-        <span class="tag tag--field">Integration</span>
-        <span class="tag tag--field">Automation</span>
+        <span class="tag tag--tech">Robot Control</span>
+        <span class="tag tag--tech">Integration Testing</span>
+        <span class="tag tag--tech">Automation</span>
       </div>
     </div>
   </a>
