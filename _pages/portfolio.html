@@ -7,8 +7,54 @@ author_profile: true
 
 {% include base_path %}
 
+<div class="project-grid">
 
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
+
+  {% comment %}Extract image src from excerpt{% endcomment %}
+  {% assign img_parts = post.excerpt | split: "src='" %}
+  {% if img_parts.size > 1 %}
+    {% assign img_src = img_parts[1] | split: "'" | first %}
+  {% else %}
+    {% assign img_parts = post.excerpt | split: 'src="' %}
+    {% if img_parts.size > 1 %}
+      {% assign img_src = img_parts[1] | split: '"' | first %}
+    {% else %}
+      {% assign img_src = '' %}
+    {% endif %}
+  {% endif %}
+
+  {% comment %}Extract meta lines from excerpt{% endcomment %}
+  {% assign meta_raw = post.excerpt | split: '<br/>' %}
+  {% assign role_line = '' %}
+  {% assign time_line = '' %}
+  {% assign contrib_line = '' %}
+  {% for part in meta_raw %}
+    {% if part contains 'Role:' %}
+      {% assign role_line = part | strip_html | strip %}
+    {% elsif part contains 'Time:' %}
+      {% assign time_line = part | strip_html | strip %}
+    {% elsif part contains 'Contribution:' %}
+      {% assign contrib_line = part | strip_html | strip | remove: 'Contribution: ' %}
+    {% endif %}
+  {% endfor %}
+
+  <a href="{{ base_path }}{{ post.url }}" class="project-card">
+    {% if img_src != '' %}
+    <div class="project-card__image">
+      <img src="{{ img_src }}" alt="{{ post.title }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="project-card__body">
+      <h3>{{ post.title }}</h3>
+      {% if time_line != '' %}
+      <span class="project-card__time">{{ time_line | remove: 'Time: ' }}</span>
+      {% endif %}
+      {% if contrib_line != '' %}
+      <p>{{ contrib_line }}</p>
+      {% endif %}
+    </div>
+  </a>
 {% endfor %}
 
+</div>

@@ -30,7 +30,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
 
 <div class="project-grid">
   <a href="/portfolio/" class="project-card">
-    <img src="/images/DDSdVRK.jpg" alt="DDS Middleware for dVRK">
+    <div class="project-card__image">
+      <img src="/images/DDSdVRK.jpg" alt="DDS Middleware for dVRK">
+    </div>
     <div class="project-card__body">
       <h3>DDS Middleware for dVRK</h3>
       <p>Real-time communication middleware for the da Vinci Research Kit</p>
@@ -42,7 +44,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     </div>
   </a>
   <a href="/portfolio/" class="project-card">
-    <img src="/images/Mazor.png" alt="Spine Surgical Robot">
+    <div class="project-card__image">
+      <img src="/images/Mazor.png" alt="Spine Surgical Robot">
+    </div>
     <div class="project-card__body">
       <h3>Spine Surgical Robot (Mazor XC)</h3>
       <p>Robotic subsystem design and systematic verification for spinal surgery</p>
@@ -54,7 +58,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     </div>
   </a>
   <a href="/portfolio/" class="project-card">
-    <img src="/images/semisupervisedlearning.png" alt="3D Segmentation">
+    <div class="project-card__image">
+      <img src="/images/semisupervisedlearning.png" alt="3D Segmentation">
+    </div>
     <div class="project-card__body">
       <h3>Semi-Supervised 3D Segmentation</h3>
       <p>Machine learning approach for volumetric medical image segmentation</p>
@@ -66,7 +72,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     </div>
   </a>
   <a href="/portfolio/" class="project-card">
-    <img src="/images/universalrobot.png" alt="Industrial Robot Platform">
+    <div class="project-card__image">
+      <img src="/images/universalrobot.png" alt="Industrial Robot Platform">
+    </div>
     <div class="project-card__body">
       <h3>General Industrial Robot Control Platform</h3>
       <p>Universal control platform for industrial robot manipulators</p>

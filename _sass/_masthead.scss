@@ -51,8 +51,9 @@
 
   a {
     font-weight: 500;
-    font-size: 0.9em;
-    letter-spacing: 0.01em;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     padding: $space-2 $space-3;
     border-radius: $border-radius;
     transition: $transition-fast;
