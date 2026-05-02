@@ -20,7 +20,7 @@
       {% if author.bio.first.size > 1 %}
         <ul class="author__bio">
         {% for item in author.bio %}
-          <li>{{ item }}</li>
+          <li title="{{ item }}">{{ item }}</li>
         {% endfor %}
         </ul>
       {% else %}

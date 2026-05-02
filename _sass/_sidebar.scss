@@ -167,13 +167,24 @@
         font-weight: 700;
       }
 
-      &:hover {
+      /* Tooltip: appears only when text is actually truncated */
+      &:hover::after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+        top: 100%;
         white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-        background: rgba($surface-1, 0.9);
+        z-index: 20;
+        padding: 0.5em 0.75em;
+        font-size: $type-size-6;
+        line-height: 1.5;
+        color: $text-color;
+        background: $surface-1;
+        border: 1px solid rgba($navy-light, 0.25);
         border-radius: $border-radius;
-        z-index: 10;
+        box-shadow: $box-shadow-md;
+        max-width: 220px;
+        pointer-events: none;
       }
     }
 
