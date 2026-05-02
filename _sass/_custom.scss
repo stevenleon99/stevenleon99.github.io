@@ -47,12 +47,16 @@ p {
   &:hover { background: rgba($accent-color, 0.25); }
 }
 
-/* Core Competencies / Professional Skills - Darker blue */
+/* Core Competencies / Professional Skills - Subtle, consistent with system */
 .tag--comp {
-  background: rgba(#264A6E, 0.35);
-  color: #7FAED4;
-  border: 1px solid rgba(#7FAED4, 0.25);
-  &:hover { background: rgba(#264A6E, 0.5); }
+  background: rgba($navy-light, 0.25);   // same family as lang, lighter intensity
+  color: $text-muted;                   // softer than primary text
+  border: 1px solid rgba($navy-light, 0.35);
+
+  &:hover {
+    background: rgba($navy-light, 0.4);
+    color: $text-color;                 // slightly stronger on hover
+  }
 }
 
 /* Organizations / Companies - Neutral elevated */
