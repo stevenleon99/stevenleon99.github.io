@@ -24,9 +24,14 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
 
 <div class="skill-section">
   <div class="tag-group">
+    <span class="tag tag--lang">Rust</span>
+    <span class="tag tag--lang">C</span>
     <span class="tag tag--lang">C++</span>
     <span class="tag tag--lang">Python</span>
     <span class="tag tag--lang">MATLAB</span>
+    <span class="tag tag--lang">Typescript</span>
+    <span class="tag tag--lang">Javascript</span>
+    <span class="tag tag--lang">SQL</span>
     <span class="tag tag--tech">Surgical Robotics</span>
     <span class="tag tag--tech">dVRK</span>
     <span class="tag tag--tech">DDS</span>

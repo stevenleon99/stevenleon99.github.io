@@ -47,12 +47,12 @@ p {
   &:hover { background: rgba($accent-color, 0.25); }
 }
 
-/* Core Competencies / Professional Skills - Lightest, softest */
+/* Core Competencies / Professional Skills - Darker blue */
 .tag--comp {
-  background: rgba(#E8C87A, 0.1);
-  color: #E8C87A;
-  border: 1px solid rgba(#E8C87A, 0.15);
-  &:hover { background: rgba(#E8C87A, 0.18); }
+  background: rgba(#264A6E, 0.35);
+  color: #7FAED4;
+  border: 1px solid rgba(#7FAED4, 0.25);
+  &:hover { background: rgba(#264A6E, 0.5); }
 }
 
 /* Organizations / Companies - Neutral elevated */
