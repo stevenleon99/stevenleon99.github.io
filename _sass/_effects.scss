@@ -1,13 +1,12 @@
 /* ==========================================================================
-   SPECIAL EFFECTS - Star Cluster Trail, Glow, Shimmer, Entrance Animations
+   SPECIAL EFFECTS - Star Cluster + Bubbles, Glow, Shimmer, Entrance Animations
    ========================================================================== */
 
-/* --- Star Cluster + Fading Trail --- */
+/* --- Base trail star styles --- */
 .trail-star {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba($primary-200, 0.35);
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
@@ -15,17 +14,21 @@
 
 /* Orbiting cluster stars — persistent, twinkling */
 .trail-star--cluster {
+  background: rgba($primary-200, 0.35);
   box-shadow: 0 0 4px rgba($primary-300, 0.4),
               0 0 10px rgba($primary-200, 0.15),
               0 0 18px rgba($primary-100, 0.08);
   transition: opacity 0.25s ease;
 }
 
-/* Trail stars — spawned behind, shrink & fade out */
-.trail-star--trail {
-  background: rgba($primary-300, 0.3);
-  box-shadow: 0 0 3px rgba($primary-300, 0.35),
-              0 0 8px rgba($primary-200, 0.12);
+/* Trail bubbles — grow then burst/pop, random colors */
+.trail-star--bubble {
+  border-radius: 50%;
+}
+
+/* Click burst bubbles — explode outward, random colors */
+.trail-star--burst {
+  border-radius: 50%;
 }
 
 

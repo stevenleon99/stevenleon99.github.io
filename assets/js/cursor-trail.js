@@ -1,7 +1,8 @@
 /* ==========================================================================
-   CURSOR TRAIL EFFECT — Star Cluster + Fading Trail
-   A constellation of twinkling stars orbiting the cursor, with a trail of
-   behind-stars that spawn behind and fade out over time
+   CURSOR TRAIL EFFECT — Star Cluster + Bubble Trail + Click Burst
+   - Orbiting star cluster following cursor
+   - Growing bubbles that burst (pop) behind the cursor
+   - Random colorful bubble burst on click
    ========================================================================== */
 
 (function () {
@@ -13,8 +14,25 @@
   var visible = false;
   var tick = 0;
 
+  /* --- Bubble color palette (soft pastels) --- */
+  var COLORS = [
+    'rgba(147, 197, 253, __A__)',   // light blue
+    'rgba(196, 181, 253, __A__)',   // lavender
+    'rgba(167, 243, 208, __A__)',   // mint
+    'rgba(253, 186, 116, __A__)',   // peach
+    'rgba(249, 168, 212, __A__)',   // pink
+    'rgba(254, 240, 138, __A__)',   // lemon
+    'rgba(103, 232, 249, __A__)',   // cyan
+    'rgba(252, 165, 165, __A__)',   // coral
+  ];
+
+  function color(alpha) {
+    var c = COLORS[Math.floor(Math.random() * COLORS.length)];
+    return c.replace('__A__', alpha);
+  }
+
   /* =======================================================================
-     PART 1 — Orbiting Star Cluster (follows cursor)
+     PART 1 — Orbiting Star Cluster
      ======================================================================= */
   var CLUSTER_SIZE = 14;
   var cluster = [];
@@ -30,10 +48,8 @@
       angle: (Math.PI * 2 / CLUSTER_SIZE) * i + (Math.random() - 0.5) * 0.8,
       speed: 0.008 + Math.random() * 0.015,
       size: 2 + Math.random() * 4,
-      x: -200,
-      y: -200,
-      tx: -200,
-      ty: -200,
+      x: -200, y: -200,
+      tx: -200, ty: -200,
       twinkleOffset: Math.random() * Math.PI * 2,
       twinkleSpeed: 0.03 + Math.random() * 0.04,
       shape: Math.random()
@@ -41,60 +57,115 @@
   }
 
   /* =======================================================================
-     PART 2 — Fading Trail Stars (spawn behind cursor, shrink & fade)
+     PART 2 — Bubble Trail (grow, then burst/pop)
      ======================================================================= */
-  var TRAIL_POOL = 50;
-  var trailPool = [];
-  var trailIdx = 0;
+  var BUBBLE_POOL = 40;
+  var bubblePool = [];
+  var bubbleIdx = 0;
   var lastSpawnX = -999, lastSpawnY = -999;
 
-  for (var j = 0; j < TRAIL_POOL; j++) {
-    var tEl = document.createElement('div');
-    tEl.className = 'trail-star trail-star--trail';
-    tEl.style.display = 'none';
-    document.body.appendChild(tEl);
+  for (var j = 0; j < BUBBLE_POOL; j++) {
+    var bEl = document.createElement('div');
+    bEl.className = 'trail-star trail-star--bubble';
+    bEl.style.display = 'none';
+    document.body.appendChild(bEl);
 
-    trailPool.push({
-      el: tEl,
-      active: false,
+    bubblePool.push({
+      el: bEl, active: false,
       x: 0, y: 0,
-      size: 0,
-      maxSize: 0,
-      life: 0,
-      maxLife: 0,
-      shape: 0
+      initSize: 0, maxSize: 0,
+      life: 0, maxLife: 0,
+      color: '',
+      phase: '' // 'grow' or 'pop'
     });
   }
 
-  function spawnTrailStar(x, y) {
-    var t = trailPool[trailIdx];
-    trailIdx = (trailIdx + 1) % TRAIL_POOL;
+  function spawnBubble(x, y) {
+    var b = bubblePool[bubbleIdx];
+    bubbleIdx = (bubbleIdx + 1) % BUBBLE_POOL;
 
-    var maxSize = 1.5 + Math.random() * 5;
-    var shape = Math.random();
+    var initSize = 5 + Math.random() * 10;
+    var maxSize = initSize + 8 + Math.random() * 14;
+    var growLife = 30 + Math.random() * 30;
+    var c = color(0.18);
 
-    t.active = true;
-    t.x = x + (Math.random() - 0.5) * 12;
-    t.y = y + (Math.random() - 0.5) * 12;
-    t.maxSize = maxSize;
-    t.size = maxSize;
-    t.life = 0;
-    t.maxLife = 40 + Math.random() * 40; // ~0.7s – 1.3s at 60fps
-    t.shape = shape;
-    t.el.style.display = 'block';
+    b.active = true;
+    b.x = x + (Math.random() - 0.5) * 20;
+    b.y = y + (Math.random() - 0.5) * 20;
+    b.initSize = initSize;
+    b.maxSize = maxSize;
+    b.life = 0;
+    b.maxLife = growLife + 8; // grow phase + pop phase
+    b.growLife = growLife;
+    b.color = c;
+    b.phase = 'grow';
+    b.el.style.display = 'block';
+    b.el.style.borderRadius = '50%';
+    b.el.style.clipPath = 'none';
+    b.el.style.background = 'radial-gradient(circle at 35% 35%, ' + c.replace(String(0.18), String(0.35)) + ', ' + c + ')';
+    b.el.style.boxShadow = '0 0 6px ' + c + ', inset 0 0 4px ' + c.replace(String(0.18), String(0.12));
+  }
 
-    // Assign shape once
-    if (shape < 0.3) {
-      t.el.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
-      t.el.style.borderRadius = '0';
-    } else if (shape < 0.55) {
-      t.el.style.clipPath = 'none';
-      t.el.style.borderRadius = '1px';
-    } else {
-      t.el.style.clipPath = 'none';
-      t.el.style.borderRadius = '50%';
+  /* =======================================================================
+     PART 3 — Click Burst (random bubbles explode outward)
+     ======================================================================= */
+  var BURST_POOL = 30;
+  var burstPool = [];
+  var burstIdx = 0;
+
+  for (var k = 0; k < BURST_POOL; k++) {
+  var burEl = document.createElement('div');
+    burEl.className = 'trail-star trail-star--burst';
+    burEl.style.display = 'none';
+    document.body.appendChild(burEl);
+
+    burstPool.push({
+      el: burEl, active: false,
+      x: 0, y: 0, vx: 0, vy: 0,
+      size: 0, maxSize: 0,
+      life: 0, maxLife: 0,
+      color: '',
+      popAt: 0,
+      phase: ''
+    });
+  }
+
+  function spawnBurst(cx, cy) {
+    var count = 5 + Math.floor(Math.random() * 8); // 5–12 bubbles
+    for (var n = 0; n < count; n++) {
+      var b = burstPool[burstIdx];
+      burstIdx = (burstIdx + 1) % BURST_POOL;
+
+      var angle = Math.random() * Math.PI * 2;
+      var speed = 2 + Math.random() * 5;
+      var sz = 6 + Math.random() * 16;
+      var growFrames = 8 + Math.floor(Math.random() * 10);
+      var totalLife = growFrames + 6 + Math.floor(Math.random() * 8);
+      var c = color(0.25);
+
+      b.active = true;
+      b.x = cx + (Math.random() - 0.5) * 6;
+      b.y = cy + (Math.random() - 0.5) * 6;
+      b.vx = Math.cos(angle) * speed;
+      b.vy = Math.sin(angle) * speed;
+      b.size = sz * 0.4;
+      b.maxSize = sz;
+      b.life = 0;
+      b.maxLife = totalLife;
+      b.popAt = growFrames;
+      b.color = c;
+      b.phase = 'grow';
+      b.el.style.display = 'block';
+      b.el.style.borderRadius = '50%';
+      b.el.style.clipPath = 'none';
+      b.el.style.background = 'radial-gradient(circle at 35% 35%, ' + c.replace(String(0.25), String(0.45)) + ', ' + c + ')';
+      b.el.style.boxShadow = '0 0 8px ' + c + ', inset 0 0 5px ' + c.replace(String(0.25), String(0.15));
     }
   }
+
+  document.addEventListener('click', function (e) {
+    spawnBurst(e.clientX, e.clientY);
+  });
 
   /* =======================================================================
      EVENTS
@@ -102,21 +173,16 @@
   document.addEventListener('mousemove', function (e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    if (!visible) visible = true;
 
-    if (!visible) {
-      visible = true;
-    }
-
-    // Spawn trail stars as the cursor moves
     var dx = mouseX - lastSpawnX;
     var dy = mouseY - lastSpawnY;
     var dist = Math.sqrt(dx * dx + dy * dy);
 
-    if (dist > 6) {
-      // Spawn 1–3 trail stars depending on speed
-      var count = Math.min(Math.floor(dist / 10) + 1, 3);
-      for (var k = 0; k < count; k++) {
-        spawnTrailStar(mouseX, mouseY);
+    if (dist > 8) {
+      var count = Math.min(Math.floor(dist / 12) + 1, 3);
+      for (var m = 0; m < count; m++) {
+        spawnBubble(mouseX, mouseY);
       }
       lastSpawnX = mouseX;
       lastSpawnY = mouseY;
@@ -133,11 +199,10 @@
   function animate() {
     tick++;
 
-    // Ease cluster center toward mouse
     centerX += (mouseX - centerX) * 0.1;
     centerY += (mouseY - centerY) * 0.1;
 
-    /* --- Update orbiting cluster stars --- */
+    /* --- Orbiting cluster --- */
     for (var i = 0; i < CLUSTER_SIZE; i++) {
       var s = cluster[i];
       s.angle += s.speed;
@@ -148,8 +213,8 @@
 
       var twinkle = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(tick * s.twinkleSpeed + s.twinkleOffset));
       var hs = s.size / 2;
-
       var transform = 'translate(' + (s.x - hs) + 'px,' + (s.y - hs) + 'px)';
+
       if (s.shape < 0.35) {
         s.el.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
         s.el.style.borderRadius = '0';
@@ -168,34 +233,79 @@
       s.el.style.opacity = visible ? twinkle : 0;
     }
 
-    /* --- Update fading trail stars --- */
-    for (var j = 0; j < TRAIL_POOL; j++) {
-      var t = trailPool[j];
-      if (!t.active) continue;
-
-      t.life++;
-      if (t.life >= t.maxLife) {
-        t.active = false;
-        t.el.style.display = 'none';
+    /* --- Bubble trail (grow then pop) --- */
+    for (var j = 0; j < BUBBLE_POOL; j++) {
+      var b = bubblePool[j];
+      if (!b.active) continue;
+      b.life++;
+      if (b.life >= b.maxLife) {
+        b.active = false;
+        b.el.style.display = 'none';
         continue;
       }
 
-      var progress = t.life / t.maxLife;
-      // Fade out
-      var opacity = 1 - progress;
-      // Shrink over time
-      var currentSize = t.maxSize * (1 - progress * 0.6);
-      var chs = currentSize / 2;
+      if (b.life < b.growLife) {
+        // Grow phase — expand + fade slightly
+        var gp = b.life / b.growLife;
+        var sz = b.initSize + (b.maxSize - b.initSize) * gp;
+        var op = 0.9 - gp * 0.35;
+        var half = sz / 2;
+        b.el.style.transform = 'translate(' + (b.x - half) + 'px,' + (b.y - half) + 'px)';
+        b.el.style.width = sz + 'px';
+        b.el.style.height = sz + 'px';
+        b.el.style.opacity = op;
+      } else {
+        // Pop phase — rapidly expand + fade out
+        var pp = (b.life - b.growLife) / (b.maxLife - b.growLife);
+        var popSz = b.maxSize * (1 + pp * 0.6);
+        var popOp = (1 - pp) * 0.55;
+        var popHalf = popSz / 2;
+        b.el.style.transform = 'translate(' + (b.x - popHalf) + 'px,' + (b.y - popHalf) + 'px)';
+        b.el.style.width = popSz + 'px';
+        b.el.style.height = popSz + 'px';
+        b.el.style.opacity = popOp;
+        b.el.style.borderRadius = '50%';
+      }
+    }
 
-      var tTransform = 'translate(' + (t.x - chs) + 'px,' + (t.y - chs) + 'px)';
-      if (t.shape < 0.55 && t.shape >= 0.3) {
-        tTransform += ' rotate(45deg)';
+    /* --- Click burst bubbles --- */
+    for (var k = 0; k < BURST_POOL; k++) {
+      var bu = burstPool[k];
+      if (!bu.active) continue;
+      bu.life++;
+      if (bu.life >= bu.maxLife) {
+        bu.active = false;
+        bu.el.style.display = 'none';
+        continue;
       }
 
-      t.el.style.transform = tTransform;
-      t.el.style.width = currentSize + 'px';
-      t.el.style.height = currentSize + 'px';
-      t.el.style.opacity = opacity;
+      // Move outward
+      bu.x += bu.vx;
+      bu.y += bu.vy;
+      bu.vx *= 0.94;
+      bu.vy *= 0.94;
+      bu.vy += 0.06; // slight gravity
+
+      if (bu.life < bu.popAt) {
+        // Grow phase
+        var bgp = bu.life / bu.popAt;
+        var bsz = bu.size + (bu.maxSize - bu.size) * bgp;
+        var bhalf = bsz / 2;
+        bu.el.style.transform = 'translate(' + (bu.x - bhalf) + 'px,' + (bu.y - bhalf) + 'px)';
+        bu.el.style.width = bsz + 'px';
+        bu.el.style.height = bsz + 'px';
+        bu.el.style.opacity = 0.9 - bgp * 0.2;
+      } else {
+        // Pop phase — expand + fade
+        var bpp = (bu.life - bu.popAt) / (bu.maxLife - bu.popAt);
+        var popBsz = bu.maxSize * (1 + bpp * 0.8);
+        var popBhalf = popBsz / 2;
+        bu.el.style.transform = 'translate(' + (bu.x - popBhalf) + 'px,' + (bu.y - popBhalf) + 'px)';
+        bu.el.style.width = popBsz + 'px';
+        bu.el.style.height = popBsz + 'px';
+        bu.el.style.opacity = (1 - bpp) * 0.7;
+        bu.el.style.borderRadius = '50%';
+      }
     }
 
     requestAnimationFrame(animate);
