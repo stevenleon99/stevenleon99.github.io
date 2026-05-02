@@ -16,7 +16,17 @@
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% if author.bio %}
+      {% if author.bio.first.size > 1 %}
+        <ul class="author__bio">
+        {% for item in author.bio %}
+          <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p class="author__bio">{{ author.bio }}</p>
+      {% endif %}
+    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">

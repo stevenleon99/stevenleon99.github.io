@@ -85,7 +85,11 @@ analytics:
 author:
   name             : "Yinan(Steve) Liu"
   avatar           : "avatar_5.png"
-  bio              : "Globus Medical Eng. | Robotics MSE @ JHU | LCSR | Ex Medtronic Eng. | Autonomous Tech Enthusiast"
+  bio              :
+    - "Globus Medical Engineer"
+    - "Robotics MSE @ JHU | LCSR"
+    - "Ex Medtronic Engineer"
+    - "Autonomous Tech Enthusiast"
   location         : "Medford MA USA"
   employer         : "Globus Medical"
   pubmed           : 
