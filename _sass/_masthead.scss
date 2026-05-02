@@ -1,11 +1,11 @@
 /* ==========================================================================
-   MASTHEAD - Modern Navigation
+   MASTHEAD - Refined Navigation
    ========================================================================== */
 
 .masthead {
   position: relative;
   border-bottom: 1px solid $border-color;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   -webkit-animation: intro 0.3s both;
@@ -17,7 +17,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.75em 1.5em;
+    padding: $space-3 $space-5;
     font-family: $global-font-family;
 
     @include breakpoint($x-large) {
@@ -53,18 +53,24 @@
     font-weight: 500;
     font-size: 0.9em;
     letter-spacing: 0.01em;
-    padding: 0.5em 0.75em;
+    padding: $space-2 $space-3;
     border-radius: $border-radius;
-    transition: $global-transition;
+    transition: $transition-fast;
+    color: $masthead-link-color;
 
     &:hover {
-      color: $primary-color;
-      background: rgba($primary-color, 0.06);
+      color: $primary-600;
+      background: $primary-50;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: $box-shadow-focus;
     }
   }
 
   &--lg {
-    padding-right: 2em;
+    padding-right: $space-5;
     font-weight: 700;
 
     a {
@@ -75,7 +81,7 @@
       letter-spacing: -0.01em;
 
       &:hover {
-        color: $primary-color;
+        color: $primary-600;
         background: transparent;
       }
     }

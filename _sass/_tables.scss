@@ -1,38 +1,55 @@
 /* ==========================================================================
-   TABLES
+   TABLES - Refined Design
    ========================================================================== */
 
 table {
-  margin-bottom: 1em;
+  margin-bottom: $space-4;
   width: 100%;
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
-  border: 1px solid $light-gray;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
 
   & + table {
-    margin-top: 1em;
+    margin-top: $space-4;
   }
 }
 
 thead {
-  background-color: $lighter-gray;
-  border-bottom: 1px solid $light-gray;
+  background-color: $primary-50;
+  border-bottom: 2px solid $primary-200;
 }
 
 th {
-  padding: 0.5em;
-  font-weight: bold;
+  padding: $space-2 $space-3;
+  font-weight: 600;
   text-align: left;
-  border-right: 1px solid $light-gray;
+  color: $darker-gray;
+  border-right: 1px solid $border-color;
 }
 
 td {
-  padding: 0.5em;
-  border-bottom: 1px solid $light-gray;
-  border-right: 1px solid $light-gray;
+  padding: $space-2 $space-3;
+  border-bottom: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+tr {
+  &:hover {
+    background-color: $primary-50;
+  }
+
+  &:last-child td {
+    border-bottom: none;
+  }
 }
 
 tr, td, th {
   vertical-align: middle;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
 }

@@ -1,9 +1,9 @@
 /* ==========================================================================
-   ARCHIVE
+   ARCHIVE - Refined Layout
    ========================================================================== */
 
 .archive {
-  margin-bottom: 2em;
+  margin-bottom: $space-6;
 
   @include breakpoint($medium) {
     @include span(12 of 12);
@@ -16,12 +16,14 @@
 
   a {
     text-decoration: underline;
+    color: $primary-600;
 
     &:hover {
       text-decoration: underline;
+      color: $primary-800;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: $box-shadow-md;
       }
     }
   }
@@ -29,19 +31,21 @@
 
 .archive__subtitle {
   margin: 1.414em 0 0;
-  padding-bottom: 0.5em;
+  padding-bottom: $space-3;
   font-size: $type-size-5;
-  color: mix(#fff, $gray, 25%);
+  color: $gray;
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
-    margin-top: 0.5em;
+    margin-top: $space-2;
   }
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: $space-1;
   font-family: $sans-serif-narrow;
+  font-weight: 600;
+  color: $darker-gray;
 
   a + a {
     opacity: 0.5;
@@ -52,7 +56,7 @@
 .page__content {
 
   .archive__item-title {
-    margin-top: 1em;
+    margin-top: $space-4;
     border-bottom: none;
   }
 }
@@ -60,6 +64,8 @@
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
+  color: $gray;
+  line-height: 1.6;
 
   & + p {
     text-indent: 0;
@@ -69,6 +75,7 @@
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
+
   img {
     width: 100%;
   }
@@ -76,11 +83,13 @@
 
 .archive__item:hover {
   .archive__item-teaser {
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    box-shadow: $box-shadow-md;
+    border: 1px solid $primary-200;
   }
 
   .archive__item-title {
     text-decoration: underline;
+    color: $primary-700;
   }
 }
 
@@ -103,7 +112,7 @@
   }
 
   .page__meta {
-    margin: 0 0 4px;
+    margin: 0 0 $space-1;
   }
 }
 
@@ -113,14 +122,14 @@
    ========================================================================== */
 
 .grid__item {
-  margin-bottom: 2em;
+  margin-bottom: $space-6;
 
   .page__meta {
-    margin: 0 0 4px;
+    margin: 0 0 $space-1;
   }
 
   .archive__item-title {
-    margin-top: 0.5em;
+    margin-top: $space-2;
     font-size: $type-size-5;
   }
 
@@ -158,13 +167,13 @@
 
 .feature__wrapper {
   @include clearfix();
-  margin-bottom: 2em;
+  margin-bottom: $space-6;
   border-bottom: 1px solid $border-color;
 }
 
 .feature__item {
-  margin-bottom: 2em;
-  font-size: 1.25rem;
+  margin-bottom: $space-6;
+  font-size: $type-size-4;
 
   @include breakpoint($small) {
     margin-bottom: 0;
@@ -178,10 +187,10 @@
 
   &--left {
     @include full();
-    font-size: 1.25rem;
+    font-size: $type-size-4;
 
     .archive__item-teaser {
-      margin-bottom: 2em;
+      margin-bottom: $space-6;
     }
 
     @include breakpoint($small) {
@@ -199,10 +208,10 @@
 
   &--right {
     @include full();
-    font-size: 1.25rem;
+    font-size: $type-size-4;
 
     .archive__item-teaser {
-      margin-bottom: 2em;
+      margin-bottom: $space-6;
     }
 
     @include breakpoint($small) {
@@ -222,10 +231,10 @@
 
   &--center {
     @include full();
-    font-size: 1.25rem;
+    font-size: $type-size-4;
 
     .archive__item-teaser {
-      margin-bottom: 2em;
+      margin-bottom: $space-6;
     }
 
     @include breakpoint($small) {

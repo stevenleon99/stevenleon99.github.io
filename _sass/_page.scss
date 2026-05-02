@@ -1,13 +1,13 @@
 /* ==========================================================================
-   SINGLE PAGE/POST - Modern Layout
+   SINGLE PAGE/POST - Refined Layout
    ========================================================================== */
 
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  margin-top: $space-6;
+  padding-left: $space-4;
+  padding-right: $space-4;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
@@ -36,13 +36,14 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1.1;
+  line-height: 1.15;
   font-family: $header-font-family;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: $darker-gray;
 
   & + .page__meta {
-    margin-top: -0.5em;
+    margin-top: -$space-2;
   }
 }
 
@@ -55,7 +56,7 @@
 .page__content {
 
   h2 {
-    padding-bottom: 0.5em;
+    padding-bottom: $space-3;
     border-bottom: 1px solid $border-color;
   }
 
@@ -78,28 +79,28 @@
 
   a {
     text-decoration: none;
-    color: $primary-color;
+    color: $primary-600;
     font-weight: 500;
-    border-bottom: 1px solid rgba($primary-color, 0.3);
+    border-bottom: 1px solid $primary-200;
 
     &:hover {
-      color: $primary-dark;
-      border-bottom-color: $primary-dark;
+      color: $primary-800;
+      border-bottom-color: $primary-600;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: $box-shadow-md;
       }
     }
   }
 
   dt {
-    margin-top: 1em;
+    margin-top: $space-4;
     font-family: $global-font-family;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   dd {
-    margin-left: 1em;
+    margin-left: $space-4;
     font-family: $global-font-family;
     font-size: $type-size-6;
   }
@@ -117,15 +118,15 @@
 
 .page__hero {
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: $space-6;
   @include clearfix;
   animation: intro 0.3s both;
   animation-delay: 0.25s;
 
   &--overlay {
     position: relative;
-    margin-bottom: 2em;
-    padding: 3em 0;
+    margin-bottom: $space-6;
+    padding: $space-7 0;
     @include clearfix;
     background-size: cover;
     background-repeat: no-repeat;
@@ -138,8 +139,8 @@
     }
 
     .wrapper {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-left: $space-4;
+      padding-right: $space-4;
 
       @include breakpoint($x-large) {
         max-width: $x-large;
@@ -151,7 +152,7 @@
     .page__lead,
     .btn {
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      text-shadow: 1px 1px 4px rgba($primary-950, 0.4);
     }
 
     .page__lead {
@@ -183,14 +184,13 @@
   color: #fff;
   font-family: $caption-font-family;
   font-size: $type-size-7;
-  background: #000;
+  background: rgba($primary-950, 0.6);
   text-align: right;
   z-index: 5;
-  opacity: 0.5;
   border-radius: $border-radius 0 $border-radius 0;
 
   @include breakpoint($large) {
-    padding: 5px 10px;
+    padding: $space-2 $space-3;
   }
 
   a {
@@ -204,8 +204,8 @@
    ========================================================================== */
 
 .page__share {
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: $space-6;
+  padding-top: $space-4;
   border-top: 1px solid $border-color;
 
   @include breakpoint(max-width $small) {
@@ -223,10 +223,11 @@
 }
 
 .page__share-title {
-  margin-bottom: 10px;
+  margin-bottom: $space-3;
   font-size: $type-size-6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: $gray;
 }
 
 
@@ -235,7 +236,7 @@
    ========================================================================== */
 
 .page__meta {
-  margin-top: 2em;
+  margin-top: $space-5;
   color: $gray;
   font-family: $global-font-family;
   font-size: $type-size-6;
@@ -250,10 +251,11 @@
 }
 
 .page__meta-title {
-  margin-bottom: 10px;
+  margin-bottom: $space-3;
   font-size: $type-size-6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: $gray;
 }
 
 
@@ -267,27 +269,28 @@
   }
 
   strong {
-    margin-right: 10px;
+    margin-right: $space-3;
   }
 }
 
 .page__taxonomy-item {
   display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 8px;
-  padding: 5px 10px;
+  margin-right: $space-2;
+  margin-bottom: $space-2;
+  padding: $space-2 $space-3;
   text-decoration: none;
-  border: 1px solid $light-gray;
-  border-radius: 999px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
   font-size: $type-size-6;
   font-weight: 500;
-  transition: $global-transition;
+  color: $dark-gray;
+  transition: $transition-fast;
 
   &:hover {
     text-decoration: none;
-    color: $primary-color;
-    border-color: rgba($primary-color, 0.3);
-    background: rgba($primary-color, 0.06);
+    color: $primary-700;
+    border-color: $primary-200;
+    background: $primary-50;
   }
 }
 
@@ -302,19 +305,21 @@
 
 .page__comments-title {
   margin-top: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: $space-3;
   padding-top: 2rem;
   font-size: $type-size-6;
   border-top: 1px solid $border-color;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: $gray;
 }
 
 .page__comments-form {
-  padding: 1em;
-  background: $lighter-gray;
-  border-radius: $border-radius-lg;
-  transition: $global-transition;
+  padding: $space-4;
+  background: $primary-50;
+  border-radius: $border-radius;
+  border: 1px solid $primary-100;
+  transition: $transition-fast;
 
   &.disabled {
     input,
@@ -323,16 +328,16 @@
     label {
       pointer-events: none;
       cursor: not-allowed;
-      filter: alpha(opacity=65);
+      filter: grayscale(40%);
       box-shadow: none;
-      opacity: 0.65;
+      opacity: 0.5;
     }
   }
 }
 
 .comment {
   @include clearfix();
-  margin: 1em 0;
+  margin: $space-4 0;
 
   &:not(:last-child) {
     border-bottom: 1px solid $border-color;
@@ -358,7 +363,7 @@
   @include breakpoint($large) {
     width: 80px;
     height: 80px;
-    padding: 5px;
+    padding: $space-2;
     border: 1px solid $border-color;
   }
 }
@@ -395,8 +400,8 @@
    ========================================================================== */
 
 .page__related {
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: $space-6;
+  padding-top: $space-4;
   border-top: 1px solid $border-color;
   @include clearfix();
   float: left;
@@ -412,8 +417,9 @@
 }
 
 .page__related-title {
-  margin-bottom: 10px;
+  margin-bottom: $space-3;
   font-size: $type-size-6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: $gray;
 }

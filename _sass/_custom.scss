@@ -1,98 +1,87 @@
 /* ==========================================================================
-   MODERN CUSTOM STYLES
-   Tag badges, cards, project grid, timeline
+   COHESIVE CUSTOM STYLES
+   Monochromatic tag badges, cards, project grid, timeline
    ========================================================================== */
 
-/* --- Tag / Tech Badge System --- */
+/* --- Tag / Tech Badge System ---
+   Categories:
+     tag--lang   → Programming languages (C++, Python, MATLAB, etc.)
+     tag--tech   → Frameworks, tools, tech (ROS2, DDS, dVRK, Deep Learning, etc.)
+     tag--field  → Domains, skills, fields (Surgical Robotics, Verification, etc.)
+     tag--org    → Companies, organizations (Medtronic, JHU, etc.)
+*/
 .tag {
   display: inline-block;
-  padding: 0.2em 0.6em;
+  padding: 0.15em 0.6em;
   font-size: 0.75em;
   font-weight: 600;
   font-family: $global-font-family;
   letter-spacing: 0.02em;
-  border-radius: 999px;
+  border-radius: 4px;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: 1.5;
   text-decoration: none;
   vertical-align: baseline;
-  transition: $global-transition;
+  transition: $transition-fast;
 }
 
-.tag--blue {
-  background: rgba($primary-color, 0.1);
-  color: $primary-color;
-  border: 1px solid rgba($primary-color, 0.2);
-  &:hover { background: rgba($primary-color, 0.18); }
+/* Languages - Darkest, most saturated */
+.tag--lang {
+  background: $primary-100;
+  color: $primary-800;
+  border: 1px solid $primary-300;
+  &:hover { background: $primary-200; }
 }
 
-.tag--cyan {
-  background: rgba($accent-color, 0.1);
-  color: darken($accent-color, 15%);
-  border: 1px solid rgba($accent-color, 0.2);
-  &:hover { background: rgba($accent-color, 0.18); }
+/* Tech / Frameworks / Tools - Medium intensity */
+.tag--tech {
+  background: $primary-50;
+  color: $primary-700;
+  border: 1px solid $primary-200;
+  &:hover { background: $primary-100; }
 }
 
-.tag--purple {
-  background: rgba($accent-secondary, 0.1);
-  color: darken($accent-secondary, 10%);
-  border: 1px solid rgba($accent-secondary, 0.2);
-  &:hover { background: rgba($accent-secondary, 0.18); }
+/* Fields / Skills / Domains - Lighter, softer */
+.tag--field {
+  background: rgba($primary-600, 0.05);
+  color: $primary-700;
+  border: 1px solid rgba($primary-600, 0.15);
+  &:hover { background: rgba($primary-600, 0.1); }
 }
 
-.tag--green {
-  background: rgba($success-color, 0.1);
-  color: darken($success-color, 15%);
-  border: 1px solid rgba($success-color, 0.2);
-  &:hover { background: rgba($success-color, 0.18); }
-}
-
-.tag--amber {
-  background: rgba($warning-color, 0.12);
-  color: darken($warning-color, 20%);
-  border: 1px solid rgba($warning-color, 0.25);
-  &:hover { background: rgba($warning-color, 0.2); }
-}
-
-.tag--red {
-  background: rgba($danger-color, 0.1);
-  color: darken($danger-color, 10%);
-  border: 1px solid rgba($danger-color, 0.2);
-  &:hover { background: rgba($danger-color, 0.18); }
-}
-
-.tag--gray {
-  background: rgba($gray, 0.1);
+/* Organizations / Companies - Neutral gray-blue */
+.tag--org {
+  background: $lighter-gray;
   color: $dark-gray;
-  border: 1px solid rgba($gray, 0.2);
-  &:hover { background: rgba($gray, 0.18); }
+  border: 1px solid $border-color;
+  &:hover { background: $primary-50; color: $primary-700; border-color: $primary-200; }
 }
 
 /* Tag group container */
 .tag-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35em;
-  margin-top: 0.5em;
-  margin-bottom: 0.75em;
+  gap: $space-2;
+  margin-top: $space-3;
+  margin-bottom: $space-4;
 }
 
 /* --- Project Card --- */
 .project-card {
   display: block;
-  background: $body-color;
+  background: $surface-1;
   border: 1px solid $border-color;
   border-radius: $border-radius-lg;
   overflow: hidden;
-  transition: $global-transition;
-  margin-bottom: 1.5em;
+  transition: $transition-slow;
+  margin-bottom: $space-5;
   text-decoration: none;
   color: inherit;
 
   &:hover {
     box-shadow: $box-shadow-lg;
     transform: translateY(-2px);
-    border-color: rgba($primary-color, 0.3);
+    border-color: $primary-200;
     text-decoration: none;
   }
 
@@ -106,10 +95,10 @@
 }
 
 .project-card__body {
-  padding: 1em 1.25em 1.25em;
+  padding: $space-4 $space-5;
 
   h3 {
-    margin: 0 0 0.4em;
+    margin: 0 0 $space-2;
     font-size: $type-size-4;
     color: $darker-gray;
   }
@@ -118,7 +107,7 @@
     margin: 0;
     font-size: $type-size-6;
     color: $gray;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 }
 
@@ -126,15 +115,15 @@
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25em;
-  margin: 1.5em 0 2em;
+  gap: $space-5;
+  margin: $space-5 0 $space-6;
 }
 
 /* --- Timeline / News --- */
 .timeline {
   position: relative;
   padding-left: 1.75em;
-  margin: 1em 0 2em;
+  margin: $space-4 0 $space-6;
 }
 
 .timeline::before {
@@ -144,14 +133,14 @@
   top: 0.4em;
   bottom: 0.4em;
   width: 2px;
-  background: linear-gradient(to bottom, $primary-color, $accent-color);
+  background: $primary-200;
   border-radius: 2px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 1.5em;
-  padding-left: 0.5em;
+  margin-bottom: $space-5;
+  padding-left: $space-3;
 
   &::before {
     content: '';
@@ -161,8 +150,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: $primary-color;
-    box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+    background: $primary-600;
+    box-shadow: 0 0 0 3px $primary-100;
   }
 
   &:last-child {
@@ -174,24 +163,25 @@
   display: inline-block;
   font-size: $type-size-6;
   font-weight: 600;
-  color: $primary-color;
-  margin-bottom: 0.25em;
+  color: $primary-600;
+  margin-bottom: $space-1;
   font-family: $global-font-family;
 }
 
 .timeline-content {
   font-size: $type-size-5;
-  line-height: 1.6;
+  line-height: 1.7;
   color: $dark-gray;
 
   a {
-    color: $primary-color;
+    color: $primary-600;
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 1px solid rgba($primary-color, 0.3);
+    border-bottom: 1px solid $primary-200;
 
     &:hover {
-      border-bottom-color: $primary-color;
+      color: $primary-800;
+      border-bottom-color: $primary-600;
     }
   }
 }
@@ -202,9 +192,9 @@
   font-size: $type-size-3;
   font-weight: 700;
   color: $darker-gray;
-  margin-bottom: 1em;
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid $primary-color;
+  margin-bottom: $space-4;
+  padding-bottom: $space-3;
+  border-bottom: 2px solid $primary-600;
   display: inline-block;
   letter-spacing: -0.01em;
 }
@@ -222,22 +212,48 @@
 
   em {
     font-style: normal;
-    background: linear-gradient(120deg, rgba($primary-color, 0.15) 0%, rgba($accent-color, 0.15) 100%);
-    padding: 0.1em 0.3em;
-    border-radius: 4px;
-    font-weight: 500;
+    font-weight: 600;
+    color: $darker-gray;
   }
 
   a {
-    color: $primary-color;
+    color: $primary-600;
     font-weight: 500;
     text-decoration: none;
-    border-bottom: 1px solid rgba($primary-color, 0.3);
+    border-bottom: 1px solid $primary-200;
 
     &:hover {
-      color: $primary-dark;
-      border-bottom-color: $primary-dark;
+      color: $primary-800;
+      border-bottom-color: $primary-600;
     }
+  }
+}
+
+/* --- Stat / metric cards (optional) --- */
+.stat-card {
+  background: $surface-1;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $space-4 $space-5;
+  transition: $transition-fast;
+
+  &:hover {
+    border-color: $primary-200;
+    box-shadow: $box-shadow-md;
+  }
+
+  &__value {
+    font-family: $header-font-family;
+    font-size: $type-size-2;
+    font-weight: 700;
+    color: $primary-700;
+    line-height: 1.2;
+  }
+
+  &__label {
+    font-size: $type-size-6;
+    color: $gray;
+    margin-top: $space-1;
   }
 }
 

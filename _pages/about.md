@@ -3,7 +3,7 @@ permalink: /
 title: "About me"
 excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
@@ -15,15 +15,15 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
 </div>
 
 <div class="tag-group" style="margin-top: 0.5em; margin-bottom: 1.5em;">
-  <span class="tag tag--blue">Surgical Robotics</span>
-  <span class="tag tag--cyan">dVRK</span>
-  <span class="tag tag--purple">System Verification</span>
-  <span class="tag tag--green">DDS Middleware</span>
-  <span class="tag tag--amber">3D Segmentation</span>
-  <span class="tag tag--blue">C++</span>
-  <span class="tag tag--cyan">Python</span>
-  <span class="tag tag--purple">ROS2</span>
-  <span class="tag tag--gray">MATLAB</span>
+  <span class="tag tag--field">Surgical Robotics</span>
+  <span class="tag tag--tech">dVRK</span>
+  <span class="tag tag--field">System Verification</span>
+  <span class="tag tag--field">DDS Middleware</span>
+  <span class="tag tag--field">3D Segmentation</span>
+  <span class="tag tag--lang">C++</span>
+  <span class="tag tag--lang">Python</span>
+  <span class="tag tag--tech">ROS2</span>
+  <span class="tag tag--lang">MATLAB</span>
 </div>
 
 ## Selected Experience
@@ -35,9 +35,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
       <h3>DDS Middleware for dVRK</h3>
       <p>Real-time communication middleware for the da Vinci Research Kit</p>
       <div class="tag-group">
-        <span class="tag tag--blue">DDS</span>
-        <span class="tag tag--cyan">dVRK</span>
-        <span class="tag tag--gray">C++</span>
+        <span class="tag tag--tech">DDS</span>
+        <span class="tag tag--tech">dVRK</span>
+        <span class="tag tag--lang">C++</span>
       </div>
     </div>
   </a>
@@ -47,9 +47,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
       <h3>Spine Surgical Robot (Mazor XC)</h3>
       <p>Robotic subsystem design and systematic verification for spinal surgery</p>
       <div class="tag-group">
-        <span class="tag tag--purple">Medtronic</span>
-        <span class="tag tag--green">Verification</span>
-        <span class="tag tag--amber">Orthopedic</span>
+        <span class="tag tag--org">Medtronic</span>
+        <span class="tag tag--field">Verification</span>
+        <span class="tag tag--field">Orthopedic</span>
       </div>
     </div>
   </a>
@@ -59,9 +59,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
       <h3>Semi-Supervised 3D Segmentation</h3>
       <p>Machine learning approach for volumetric medical image segmentation</p>
       <div class="tag-group">
-        <span class="tag tag--blue">Deep Learning</span>
-        <span class="tag tag--cyan">3D Segmentation</span>
-        <span class="tag tag--gray">Python</span>
+        <span class="tag tag--tech">Deep Learning</span>
+        <span class="tag tag--field">3D Segmentation</span>
+        <span class="tag tag--lang">Python</span>
       </div>
     </div>
   </a>
@@ -71,9 +71,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
       <h3>General Industrial Robot Control Platform</h3>
       <p>Universal control platform for industrial robot manipulators</p>
       <div class="tag-group">
-        <span class="tag tag--green">Robot Control</span>
-        <span class="tag tag--purple">Integration</span>
-        <span class="tag tag--amber">Automation</span>
+        <span class="tag tag--field">Robot Control</span>
+        <span class="tag tag--field">Integration</span>
+        <span class="tag tag--field">Automation</span>
       </div>
     </div>
   </a>
@@ -87,9 +87,8 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     <div class="timeline-content">
       Joined <a href="https://www.globusmedical.com/musculoskeletal-solutions/excelsiustechnology/">Globus Medical</a> as Software Test Automation Engineer
       <div class="tag-group">
-        <span class="tag tag--blue">GM</span>
-        <span class="tag tag--green">Globus Medical</span>
-        <span class="tag tag--purple">Excelsius</span>
+        <span class="tag tag--org">Globus Medical</span>
+        <span class="tag tag--org">Excelsius</span>
       </div>
     </div>
   </div>
@@ -98,8 +97,8 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     <div class="timeline-content">
       Graduated from <a href="https://lcsr.jhu.edu/">JHU</a> with MSE in Robotics
       <div class="tag-group">
-        <span class="tag tag--blue">JHU</span>
-        <span class="tag tag--cyan">LCSR</span>
+        <span class="tag tag--org">JHU</span>
+        <span class="tag tag--org">LCSR</span>
       </div>
     </div>
   </div>
@@ -108,9 +107,9 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     <div class="timeline-content">
       Software Engineer role in <a href="https://www.medtronic.com/covidien/en-us/robotic-assisted-surgery/hugo-ras-system.html">Hugo RAS</a> team at Medtronic
       <div class="tag-group">
-        <span class="tag tag--purple">Medtronic</span>
-        <span class="tag tag--green">Hugo RAS</span>
-        <span class="tag tag--gray">NorthHaven</span>
+        <span class="tag tag--org">Medtronic</span>
+        <span class="tag tag--tech">Hugo RAS</span>
+        <span class="tag tag--org">NorthHaven</span>
       </div>
     </div>
   </div>
@@ -119,12 +118,12 @@ I am an experienced <em>System Verification, Electromechanical Design, and Softw
     <div class="timeline-content">
       Selected for Pittsburgh Robotics Trek by <a href="https://imagine.jhu.edu/">Integrative Learning and Life Design</a> at JHU
       <div class="tag-group">
-        <span class="tag tag--blue"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7151653086367817728/">Gecko</a></span>
-        <span class="tag tag--cyan"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7150616178858627072/">Carnegie Robotics</a></span>
-        <span class="tag tag--gray">Astrobotic</span>
-        <span class="tag tag--gray">Agility</span>
-        <span class="tag tag--gray">NREC</span>
-        <span class="tag tag--gray">Smith&Nephew</span>
+        <span class="tag tag--org"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7151653086367817728/">Gecko</a></span>
+        <span class="tag tag--org"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7150616178858627072/">Carnegie Robotics</a></span>
+        <span class="tag tag--org">Astrobotic</span>
+        <span class="tag tag--org">Agility</span>
+        <span class="tag tag--org">NREC</span>
+        <span class="tag tag--org">Smith&Nephew</span>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
 /* ==========================================================================
-   Forms
+   Forms - Refined Monochromatic System
    ========================================================================== */
 
 form {
-  margin: 0 0 5px 0;
+  margin: 0 0 $space-3 0;
 
   fieldset {
-    margin-bottom: 5px;
+    margin-bottom: $space-3;
     padding: 0;
     border-width: 0;
   }
@@ -14,22 +14,22 @@ form {
   legend {
     display: block;
     width: 100%;
-    margin-bottom: 5px * 2;
+    margin-bottom: $space-4;
     *margin-left: -7px;
     padding: 0;
     color: $text-color;
     border: 0;
-    border-bottom: 1px solid mix(#fff, #000, 80%);
+    border-bottom: 1px solid $border-color;
     white-space: normal;
   }
 
   p {
-    margin-bottom: 5px / 2;
+    margin-bottom: $space-1;
   }
 
   ul {
     list-style-type: none;
-    margin: 0 0 5px 0;
+    margin: 0 0 $space-3 0;
     padding: 0;
   }
 
@@ -57,12 +57,13 @@ textarea {
 
 label {
   display: block;
-  margin-bottom: 0.25em;
+  margin-bottom: $space-1;
   color: $text-color;
   cursor: pointer;
 
   small {
     font-size: $type-size-6;
+    color: $gray;
   }
 
   input,
@@ -77,16 +78,23 @@ textarea,
 select {
   display: inline-block;
   width: 100%;
-  padding: 0.25em;
-  margin-bottom: 0.5em;
+  padding: $space-2 $space-3;
+  margin-bottom: $space-2;
   color: $text-color;
   background-color: #fff;
-  border: 1px solid mix(#fff, #000, 80%);
+  border: 1px solid $border-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  transition: $transition-fast;
 
   &:hover {
-    border-color: mix(#fff, $primary-color, 50%);
+    border-color: $primary-200;
+  }
+
+  &:focus {
+    border-color: $primary-500;
+    outline: none;
+    box-shadow: $box-shadow-focus;
   }
 }
 
@@ -104,7 +112,7 @@ input[type="radio"] {
   width: auto;
   height: auto;
   padding: 0;
-  margin: 3px 0;
+  margin: $space-1 0;
   *margin-top: 0;
   line-height: normal;
   cursor: pointer;
@@ -146,7 +154,7 @@ input[type="submit"] {
 
 select,
 input[type="file"] {
-  *margin-top: 4px;
+  *margin-top: $space-1;
 }
 
 select {
@@ -176,27 +184,27 @@ input[type="hidden"] {
 
 .radio,
 .checkbox {
-  padding-left: 18px;
+  padding-left: $space-5;
   font-weight: normal;
 }
 
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   float: left;
-  margin-left: -18px;
+  margin-left: -$space-5;
 }
 
 .radio.inline,
 .checkbox.inline {
   display: inline-block;
-  padding-top: 5px;
+  padding-top: $space-2;
   margin-bottom: 0;
   vertical-align: middle;
 }
 
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
-  margin-left: 10px;
+  margin-left: $space-3;
 }
 
 
@@ -221,7 +229,7 @@ textarea[readonly] {
 
 input:focus,
 textarea:focus {
-  border-color: $primary-color;
+  border-color: $primary-500;
   outline: 0;
   outline: thin dotted \9;
 }
@@ -240,19 +248,19 @@ select:focus {
 
 .help-block,
 .help-inline {
-  color: $info-color;
+  color: $primary-600;
 }
 
 .help-block {
   display: block;
-  margin-bottom: 1em;
-  line-height: 1em;
+  margin-bottom: $space-4;
+  line-height: 1.4;
 }
 
 .help-inline {
   display: inline-block;
   vertical-align: middle;
-  padding-left: 5px;
+  padding-left: $space-2;
 }
 
 
@@ -283,7 +291,8 @@ select:focus {
 .form-inline .checkbox input[type="checkbox"] {
   float: left;
   margin-left: 0;
-  margin-right: 3px; }
+  margin-right: $space-1;
+}
 
 
 /*
@@ -298,10 +307,10 @@ select:focus {
 }
 
 .form-search .search-query {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: $space-5;
+  padding-right: $space-5;
   margin-bottom: 0;
-  border-radius: 14px;
+  border-radius: $border-radius-lg;
 }
 
 .form-search label {
@@ -320,7 +329,7 @@ select:focus {
 .form-search .checkbox input[type="checkbox"] {
   float: left;
   margin-left: 0;
-  margin-right: 3px;
+  margin-right: $space-1;
 }
 
 
@@ -373,17 +382,22 @@ select:focus {
 
 #goog-wm-qt {
   width: auto;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  padding: 8px 20px;
+  margin-right: $space-3;
+  margin-bottom: $space-5;
+  padding: $space-2 $space-5;
   display: inline-block;
   font-size: $type-size-6;
   background-color: #fff;
-  color: #000;
-  border-width: 2px !important;
+  color: $darker-gray;
+  border-width: 1px !important;
   border-style: solid !important;
-  border-color: lighten(#000,50);
+  border-color: $border-color;
   border-radius: $border-radius;
+
+  &:focus {
+    border-color: $primary-500;
+    box-shadow: $box-shadow-focus;
+  }
 }
 
 #goog-wm-sb {

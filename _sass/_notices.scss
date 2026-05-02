@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NOTICE TEXT BLOCKS
+   NOTICE TEXT BLOCKS - Monochromatic Refinement
    ========================================================================== */
 
 /**
@@ -12,17 +12,18 @@
 
 @mixin notice($notice-color) {
   margin: 2em 0 !important;  /* override*/
-  padding: 1em;
+  padding: $space-4 $space-5;
   font-family: $global-font-family;
   font-size: $type-size-6 !important;
   text-indent: initial; /* override*/
-  background-color: mix(#fff, $notice-color, 90%);
+  background-color: mix(#fff, $notice-color, 92%);
   border-radius: $border-radius;
-  box-shadow: 0 1px 1px rgba($notice-color, 0.25);
+  border: 1px solid mix(#fff, $notice-color, 80%);
+  border-left: 3px solid $notice-color;
 
   h4 {
     margin-top: 0 !important; /* override*/
-    margin-bottom: 0.75em;
+    margin-bottom: $space-3;
   }
 
   @at-root .page__content #{&} h4 {
@@ -44,10 +45,13 @@
   }
 
   a {
-    color: $notice-color;
+    color: darken($notice-color, 15%);
+    font-weight: 500;
+    border-bottom: 1px solid rgba($notice-color, 0.3);
 
     &:hover {
-      color: mix(#000, $notice-color, 40%);
+      color: darken($notice-color, 25%);
+      border-bottom-color: darken($notice-color, 15%);
     }
   }
 
@@ -65,35 +69,35 @@
 /* Default notice */
 
 .notice {
-  @include notice($light-gray);
+  @include notice($gray);
 }
 
 /* Primary notice */
 
 .notice--primary {
-  @include notice($primary-color);
+  @include notice($primary-600);
 }
 
 /* Info notice */
 
 .notice--info {
-  @include notice($info-color);
+  @include notice($primary-500);
 }
 
 /* Warning notice */
 
 .notice--warning {
-  @include notice($warning-color);
+  @include notice($primary-400);
 }
 
 /* Success notice */
 
 .notice--success {
-  @include notice($success-color);
+  @include notice($primary-700);
 }
 
 /* Danger notice */
 
 .notice--danger {
-  @include notice($danger-color);
+  @include notice($primary-800);
 }

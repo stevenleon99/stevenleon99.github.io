@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NAVIGATION
+   NAVIGATION - Monochromatic Refinement
    ========================================================================== */
 
 /*
@@ -11,8 +11,8 @@
   @include clearfix;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: $space-5;
+  padding-right: $space-5;
   font-family: $sans-serif;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -20,8 +20,8 @@
           animation-delay: 0.30s;
 
   @include breakpoint($large) {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: $space-4;
+    padding-right: $space-4;
   }
 
   @include breakpoint($x-large) {
@@ -47,7 +47,8 @@
   }
 
   .current {
-    font-weight: bold;
+    font-weight: 600;
+    color: $primary-700;
   }
 }
 
@@ -59,8 +60,8 @@
 .pagination {
   @include full();
   @include clearfix();
-  margin-top: 1em;
-  padding-top: 1em;
+  margin-top: $space-4;
+  padding-top: $space-4;
 
   ul {
     margin: 0;
@@ -75,29 +76,32 @@
     margin-left: -1px;
 
     a {
-      margin-bottom: 0.25em;
-      padding: 0.5em 1em;
+      margin-bottom: $space-1;
+      padding: $space-2 $space-4;
       font-family: $sans-serif;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: $type-size-6;
+      font-weight: 600;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: mix(#fff, $gray, 25%);
-      border: 1px solid $light-gray;
-      border-radius: 0;
+      color: $gray;
+      border: 1px solid $border-color;
+      transition: $transition-fast;
 
       &:hover {
-        color: $link-color-hover;
+        color: $primary-700;
+        background: $primary-50;
+        border-color: $primary-200;
       }
 
       &.current {
         color: #fff;
-        background: $primary-color;
+        background: $primary-600;
+        border-color: $primary-600;
       }
 
       &.disabled {
-        color: mix(#fff, $gray, 75%);
+        color: $light-gray;
         pointer-events: none;
         cursor: not-allowed;
       }
@@ -123,20 +127,23 @@
   /* next/previous buttons */
   &--pager {
     display: block;
-    padding: 1em 2em;
+    padding: $space-4 $space-5;
     float: left;
     width: 50%;
     font-family: $sans-serif;
     font-size: $type-size-5;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
     text-decoration: none;
-    color: mix(#fff, $gray, 50%);
-    border: 1px solid $light-gray;
+    color: $gray;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
+    transition: $transition-fast;
 
     &:hover {
-      color: $link-color-hover;
+      color: $primary-700;
+      border-color: $primary-200;
+      background: $primary-50;
     }
 
     &:first-child {
@@ -151,7 +158,7 @@
     }
 
     &.disabled {
-      color: mix(#fff, $gray, 75%);
+      color: $light-gray;
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -162,8 +169,8 @@
 .page__meta + .pagination,
 .page__share + .pagination,
 .page__comments + .pagination {
-  margin-top: 2em;
-  padding-top: 2em;
+  margin-top: $space-6;
+  padding-top: $space-6;
   border-top: 1px solid $border-color;
 }
 
@@ -180,9 +187,10 @@
   a {
     display: block;
     margin: 0 1rem;
-    padding: 0.5rem 0;
+    padding: $space-2 0;
     color: $masthead-link-color;
     text-decoration: none;
+    transition: $transition-fast;
 
     &:hover {
       color: $masthead-link-color-hover;
@@ -193,12 +201,18 @@
     position: absolute;
     height: 100%;
     right: 0;
-    padding: 0 0.5rem;
+    padding: 0 $space-2;
     border: 0;
     outline: none;
-    background-color: $primary-color;
+    background-color: $primary-600;
     color: #fff;
     cursor: pointer;
+    border-radius: $border-radius;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $primary-700;
+    }
   }
 
   .visible-links {
@@ -231,20 +245,20 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 4px;
-        background: mix(#fff, $primary-color, 50%);
+        height: 2px;
+        background: $primary-400;
         width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
+        -webkit-transition: $transition-fast;
+        transition: $transition-fast;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
+                transform: scaleX(0);
       }
 
       &:hover:before {
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
+                transform: scaleX(1);
       }
     }
   }
@@ -253,21 +267,22 @@
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 15px;
-    padding: 5px;
+    margin-top: $space-4;
+    padding: $space-2;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: #fff;
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    box-shadow: $box-shadow-lg;
 
     a {
       margin: 0;
-      padding: 10px 20px;
+      padding: $space-3 $space-5;
       font-size: $type-size-5;
+      border-radius: $border-radius;
 
       &:hover {
-        color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
+        color: $primary-600;
+        background: $primary-50;
       }
     }
 
@@ -314,53 +329,61 @@
    ========================================================================== */
 
 .nav__list {
-  font-size: 1.25rem;
+  font-size: $type-size-4;
 
   ul {
-    margin-bottom: 1em;
+    margin-bottom: $space-4;
   }
 
   a {
     display: block;
     padding: 0.125em 0;
     color: inherit;
+    transition: $transition-fast;
 
     &:hover {
-      text-decoration: underline;
+      color: $primary-600;
+      text-decoration: none;
+      background: $primary-50;
+      border-radius: $border-radius;
+      padding-left: $space-2;
     }
   }
 
   .active {
-    margin-left: -0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    margin-left: -$space-2;
+    padding-left: $space-2;
+    padding-right: $space-2;
     color: #fff;
-    font-weight: bold;
-    background: $primary-color;
+    font-weight: 600;
+    background: $primary-600;
     border-radius: $border-radius;
 
     &:hover {
       color: #fff;
+      background: $primary-700;
     }
   }
 }
 
 .nav__title {
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: $space-2 $space-4;
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .nav__sub-title {
   display: block;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0;
+  margin: $space-2 0;
+  padding: $space-2 0;
   font-family: $sans-serif-narrow;
   font-size: $type-size-6;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $primary-700;
   border-bottom: 1px solid $border-color;
 }
 
@@ -373,7 +396,7 @@
   font-family: $sans-serif-narrow;
   color: $gray;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   background-color: #fff;
   border: 1px solid $border-color;
   border-radius: $border-radius;
@@ -382,7 +405,7 @@
   .nav__title {
     color: #fff;
     font-size: $type-size-6;
-    background: $primary-color;
+    background: $primary-600;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
@@ -393,20 +416,21 @@
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: 0.8rem;
+  font-size: $type-size-6;
 
   a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: $space-2 $space-4;
     color: $gray;
     font-size: $type-size-7;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
+    transition: $transition-fast;
 
     &:hover {
-      color: #000;
-      background: $lighter-gray;
+      color: $primary-700;
+      background: $primary-50;
     }
   }
 
@@ -417,8 +441,8 @@
   }
 
   li ul > li a {
-    padding-left: 2rem;
-    font-weight: normal;
+    padding-left: $space-6;
+    font-weight: 500;
   }
 
   /* hide sub sub links on small screens*/
