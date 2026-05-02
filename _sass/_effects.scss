@@ -1,17 +1,31 @@
 /* ==========================================================================
-   SPECIAL EFFECTS - Shooting Stars, Glow, Shimmer, Entrance Animations
+   SPECIAL EFFECTS - Star Cluster Trail, Glow, Shimmer, Entrance Animations
    ========================================================================== */
 
-/* --- Shooting Star Particles --- */
-.shooting-star {
+/* --- Star Cluster + Fading Trail --- */
+.trail-star {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba($primary-300, 0.12);
-  box-shadow: 0 0 4px rgba($primary-400, 0.18),
-              0 0 8px rgba($primary-200, 0.08);
+  background: rgba($primary-200, 0.35);
   pointer-events: none;
   z-index: 9999;
+  opacity: 0;
+}
+
+/* Orbiting cluster stars — persistent, twinkling */
+.trail-star--cluster {
+  box-shadow: 0 0 4px rgba($primary-300, 0.4),
+              0 0 10px rgba($primary-200, 0.15),
+              0 0 18px rgba($primary-100, 0.08);
+  transition: opacity 0.25s ease;
+}
+
+/* Trail stars — spawned behind, shrink & fade out */
+.trail-star--trail {
+  background: rgba($primary-300, 0.3);
+  box-shadow: 0 0 3px rgba($primary-300, 0.35),
+              0 0 8px rgba($primary-200, 0.12);
 }
 
 
@@ -238,7 +252,7 @@
 
 /* --- Disable effects on mobile / reduced motion --- */
 @media (hover: none) {
-  .shooting-star {
+  .trail-star {
     display: none !important;
   }
 }
