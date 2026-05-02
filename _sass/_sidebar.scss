@@ -154,6 +154,9 @@
       font-size: $type-size-6;
       color: $text-muted;
       line-height: 1.8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:before {
         content: "›";

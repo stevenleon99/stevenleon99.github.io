@@ -78,7 +78,8 @@ p {
 
 /* --- Project Card - Dark Elevated Design --- */
 .project-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: $surface-1;
   border: 1px solid rgba($navy-light, 0.15);
   border-radius: $border-radius-xl;
@@ -89,14 +90,21 @@ p {
   color: inherit;
   box-shadow: $box-shadow;
 
+  &, *, h3, p, span {
+    text-decoration: none;
+  }
+
   &:hover {
     box-shadow: $box-shadow-card-hover;
     transform: translateY(-4px);
     border-color: rgba($accent-color, 0.25);
-    text-decoration: none;
 
     .project-card__image img {
       transform: scale(1.03);
+    }
+
+    h3 {
+      color: $accent-color;
     }
   }
 }
@@ -108,6 +116,7 @@ p {
   height: 220px;
   overflow: hidden;
   background: $surface-2;
+  flex-shrink: 0;
 
   img {
     width: 100%;
@@ -121,40 +130,52 @@ p {
 }
 
 .project-card__body {
-  padding: $space-5;
+  padding: $space-4 $space-5 $space-5;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   h3 {
-    margin: 0 0 $space-2;
-    font-size: $type-size-4;
+    margin: 0;
+    font-size: $type-size-5;
     font-family: $header-font-family;
-    font-weight: 600;
+    font-weight: 700;
     color: $text-color;
-    line-height: 1.3;
+    line-height: 1.35;
+    text-decoration: none;
   }
 
   p {
     margin: $space-2 0 0;
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: $text-muted;
-    line-height: 1.6;
+    line-height: 1.55;
+    text-align: left;
   }
 }
 
 /* Time badge in card */
 .project-card__time {
-  display: inline-block;
-  font-size: 0.8em;
+  display: block;
+  font-size: 0.75em;
   font-weight: 500;
   color: $accent-color;
-  margin-bottom: $space-2;
+  margin-top: $space-2;
+  margin-bottom: $space-1;
   letter-spacing: 0.02em;
+}
+
+/* Push tag group to bottom of card */
+.project-card__body .tag-group {
+  margin-top: auto;
+  padding-top: $space-3;
 }
 
 /* Project grid layout */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: $space-5;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: $space-4;
   margin: $space-5 0 $space-6;
 }
 
@@ -324,5 +345,14 @@ p {
 @include breakpoint(max-width $small) {
   .project-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* --- Global link underline cleanup for cards --- */
+.project-card,
+.project-card:hover {
+  a, h3, p, span {
+    text-decoration: none;
+    border-bottom: none;
   }
 }

@@ -55,6 +55,7 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
     </div>
     <div class="project-card__body">
       <h3>DDS Middleware for dVRK</h3>
+      <span class="project-card__time">2025</span>
       <p>Real-time communication middleware for the da Vinci Research Kit</p>
       <div class="tag-group">
         <span class="tag tag--tech">DDS</span>
@@ -69,6 +70,7 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
     </div>
     <div class="project-card__body">
       <h3>Spine Surgical Robot (Mazor XC)</h3>
+      <span class="project-card__time">2020 – 2023</span>
       <p>Robotic subsystem design and systematic verification for spinal surgery</p>
       <div class="tag-group">
         <span class="tag tag--org">Medtronic</span>
@@ -83,6 +85,7 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
     </div>
     <div class="project-card__body">
       <h3>Semi-Supervised 3D Segmentation</h3>
+      <span class="project-card__time">2023</span>
       <p>Machine learning approach for volumetric medical image segmentation</p>
       <div class="tag-group">
         <span class="tag tag--tech">Deep Learning</span>
@@ -96,7 +99,8 @@ an advanced degree in Robotics at <a href="https://lcsr.jhu.edu/about/">LCSR, Jo
       <img src="/images/universalrobot.png" alt="Industrial Robot Platform">
     </div>
     <div class="project-card__body">
-      <h3>General Industrial Robot Control Platform</h3>
+      <h3>Industrial Robot Control Platform</h3>
+      <span class="project-card__time">2022 – 2023</span>
       <p>Universal control platform for industrial robot manipulators</p>
       <div class="tag-group">
         <span class="tag tag--tech">Robot Control</span>

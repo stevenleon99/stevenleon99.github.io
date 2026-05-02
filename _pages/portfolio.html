@@ -53,6 +53,11 @@ author_profile: true
       {% if contrib_line != '' %}
       <p>{{ contrib_line }}</p>
       {% endif %}
+      {% if role_line != '' %}
+      <div class="tag-group">
+        <span class="tag tag--org">{{ role_line | remove: 'Role: ' }}</span>
+      </div>
+      {% endif %}
     </div>
   </a>
 {% endfor %}
